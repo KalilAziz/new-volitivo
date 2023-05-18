@@ -1,8 +1,18 @@
+import { CtaSection } from './components/cta-section'
+import { CtaSectionFooter } from './components/cta-section-footer'
+import { HeaderSection } from './components/header-section'
+import { HeroSection } from './components/hero-section'
+import { Testimonials } from './components/testimonials'
+
 const Home = () => {
   return (
-    <main>
-      <h1>hello word</h1>
-    </main>
+    <>
+      <HeroSection />
+      <HeaderSection />
+      <CtaSection />
+      <CtaSectionFooter />
+      <Testimonials />
+    </>
   )
 }
 
