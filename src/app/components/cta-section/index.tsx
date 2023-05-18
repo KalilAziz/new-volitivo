@@ -1,7 +1,9 @@
+import { SectionContent } from '@/components/interface/section-content'
+
 export const CtaSection = () => {
   return (
     <div className="overflow-hidden bg-white py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+      <SectionContent className="lg:flex">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our people</h2>
@@ -55,7 +57,7 @@ export const CtaSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </SectionContent>
     </div>
   )
 }

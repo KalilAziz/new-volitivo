@@ -1,7 +1,9 @@
+import { SectionContent } from '@/components/interface/section-content'
+
 export const Testimonials = () => {
   return (
     <section className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <SectionContent>
         <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
             <img className="h-12 self-start" src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="" />
@@ -50,7 +52,7 @@ export const Testimonials = () => {
             </figure>
           </div>
         </div>
-      </div>
+      </SectionContent>
     </section>
   )
 }

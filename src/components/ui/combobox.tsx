@@ -23,18 +23,18 @@ type ComboboxProps = {
   labelEmpty: string
 }
 
-export function Combobox({ value, setValue, options, label, placeholder, labelEmpty }: ComboboxProps) {
+export const Combobox = ({ value, setValue, options, label, placeholder, labelEmpty }: ComboboxProps) => {
   const [open, setOpen] = React.useState(false)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
-          {value ? options.find((framework) => framework.value === value)?.label : label}
+        <Button variant="outline" role="combobox" aria-expanded={open} className="w-full max-w-[450px] justify-between">
+          {value ? options.find((framework) => framework.value.toLowerCase() === value.toLowerCase())?.label : label}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-full max-w-[450px] ">
         <Command>
           <CommandInput placeholder={placeholder} />
           <CommandEmpty>{labelEmpty}</CommandEmpty>
@@ -47,7 +47,12 @@ export function Combobox({ value, setValue, options, label, placeholder, labelEm
                   setOpen(false)
                 }}
               >
-                <Check className={cn('mr-2 h-4 w-4', value === framework.value ? 'opacity-100' : 'opacity-0')} />
+                <Check
+                  className={cn(
+                    'mr-2 h-4 w-4',
+                    value.toLowerCase() === framework.value.toLowerCase() ? 'opacity-100' : 'opacity-0'
+                  )}
+                />
                 {framework.label}
               </CommandItem>
             ))}

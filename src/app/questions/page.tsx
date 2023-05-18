@@ -1,5 +1,7 @@
+import { Filters } from './components/filters'
+
 const PageQuestions = () => {
-  return <h1>hello word</h1>
+  return <Filters />
 }
 
 export default PageQuestions
