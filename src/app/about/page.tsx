@@ -1,5 +1,10 @@
+import { CtaSection } from '../components/cta-section'
+
 const PageAbout = () => {
-  return <h1>hello word</h1>
+  return(
+    <CtaSection></CtaSection>
+    
+  )
 }
 
 export default PageAbout

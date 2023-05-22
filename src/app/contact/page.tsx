@@ -1,5 +1,9 @@
+import { Forms } from './forms'
+
 const PageContact = () => {
-  return <h1>hello word</h1>
+  return(
+    <Forms></Forms>
+  )
 }
 
 export default PageContact

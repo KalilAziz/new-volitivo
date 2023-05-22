@@ -16,7 +16,7 @@ export const Navigate = () => {
           <div key={item.name} className="pb-6">
             <Link
               href={item.href}
-              className={cn('text-sm leading-6 text-gray-600 hover:text-indigo-600', current && ' text-indigo-600')}
+              className={cn('text-sm leading-6 text-gray-600 hover:text-blue-600', current && ' text-blue-600')}
             >
               {item.name}
             </Link>
