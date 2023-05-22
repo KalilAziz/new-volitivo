@@ -1,44 +1,34 @@
-"use client";
-import React from "react";
+'use client'
+import React from 'react'
 
-import { cn } from "@/lib/utils";
-import { VariantProps, cva } from "class-variance-authority";
-import { Slot } from "@radix-ui/react-slot";
+import { cn } from '@/lib/utils'
+import { Slot } from '@radix-ui/react-slot'
+import { VariantProps, cva } from 'class-variance-authority'
 
-const textVariants = cva("inline-block font-medium text-black", {
+const textVariants = cva('inline-block font-medium text-black', {
   variants: {
     size: {
-      sm: "text-sm",
-      default: "text-base",
-      lg: "text-lg",
-      xl: "text-xl",
-    },
+      sm: 'text-sm',
+      default: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl'
+    }
   },
   defaultVariants: {
-    size: "default",
-  },
-});
+    size: 'default'
+  }
+})
 
-export interface TextProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {
-  asChild?: boolean;
+export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof textVariants> {
+  asChild?: boolean
 }
 
-const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
-  ({ className, ...props }, ref) => {
-    const Component = props.asChild ? Slot : "p";
+const Text = React.forwardRef<HTMLParagraphElement, TextProps>(({ className, ...props }, ref) => {
+  const Component = props.asChild ? Slot : 'p'
 
-    return (
-      <Component
-        ref={ref}
-        className={cn(textVariants(props), className)}
-        {...props}
-      />
-    );
-  }
-);
+  return <Component ref={ref} className={cn(textVariants(props), className)} {...props} />
+})
 
-Text.displayName = "Text";
+Text.displayName = 'Text'
 
-export { Text, textVariants };
+export { Text, textVariants }

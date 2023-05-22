@@ -19,7 +19,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'A'
   },
   {
     codeQuestion: 'INV002',
@@ -39,7 +39,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'B'
   },
   {
     codeQuestion: 'INV003',
@@ -79,7 +79,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'C'
   },
   {
     codeQuestion: 'INV005',
@@ -99,7 +99,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'D'
   },
   {
     codeQuestion: 'INV006',
@@ -119,7 +119,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'E'
   },
   {
     codeQuestion: 'INV007',
@@ -139,7 +139,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'A'
   },
   {
     codeQuestion: 'INV008',
@@ -159,7 +159,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'B'
   },
   {
     codeQuestion: 'INV009',
@@ -179,7 +179,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'C'
   },
   {
     codeQuestion: 'INV010',
@@ -199,7 +199,7 @@ const questions = [
       'text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It wa',
     alternativeE:
       'and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
-    correctAnswer: 'alternativeA'
+    correctAnswer: 'D'
   }
 ]
 

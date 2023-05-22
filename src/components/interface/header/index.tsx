@@ -18,18 +18,14 @@ export const Header = () => {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <header className="bg-white">
+    <header className=" bg-white">
       <SectionContent>
         <nav className=" flex items-center justify-between gap-x-6 " aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Volitivo</span>
-              <img
-                className="h-12 w-auto"
-                src="logo.png"
-                alt="Logo"
-              />
-              <Text>Volitivo</Text>
+              <img className="h-12 w-auto" src="logo.png" alt="Logo" />
+              <span className="text-lg font-medium">Volitivo</span>
             </Link>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
@@ -55,21 +51,20 @@ export const Header = () => {
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-6">
             <Link href="/login">
-            <Button variant={"ghost"} className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900">
-              Login
-            </Button>
+              <Button
+                variant={'ghost'}
+                className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900"
+              >
+                Login
+              </Button>
             </Link>
             <Link href="/login">
-            <Button
-             // className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Cadastre-se
-            </Button>
+              <Button>Cadastre-se</Button>
             </Link>
           </div>
           <div className="flex lg:hidden">
             <Link
-            href=""
+              href=""
               className="-m-2.5 inline-flex items-center justify-center text-gray-700"
               onClick={() => setMobileMenuOpen(true)}
             >
@@ -85,17 +80,11 @@ export const Header = () => {
           <div className="flex items-center gap-x-6">
             <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Volitivo</span>
-              <img
-                className="h-12 w-auto"
-                src="logo.png"
-                alt="logo"
-              />
+              <img className="h-12 w-auto" src="logo.png" alt="logo" />
               <Text>Volitivo</Text>
             </Link>
             <Link href="/login">
-            <Button className="ml-4" >
-              Cadrastre-se
-            </Button>
+              <Button className="ml-4">Cadrastre-se</Button>
             </Link>
             <Link href="" className="-m-2.5  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">Fechar menu</span>

@@ -1,9 +1,7 @@
-import { Forms } from './forms'
+import { Forms } from './components/forms'
 
 const PageContact = () => {
-  return(
-    <Forms></Forms>
-  )
+  return <Forms />
 }
 
 export default PageContact

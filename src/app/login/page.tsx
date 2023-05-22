@@ -4,9 +4,7 @@ export const Login = () => {
   return (
     <div>
       <main>
-      <Heading>
-        Login
-      </Heading>
+        <Heading>Login</Heading>
       </main>
     </div>
   )

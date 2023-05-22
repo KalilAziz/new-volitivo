@@ -4,10 +4,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { useToast } from '@/components/ui/use-toast'
 
 import { cn } from '@/lib/utils'
 
-type QuestionProps = {
+import { OptionQuestion } from './option-question'
+
+export type QuestionProps = {
   codeQuestion: string
   year: string
   subjects: string
@@ -24,7 +27,10 @@ type QuestionProps = {
 }
 
 export const Question = (question: QuestionProps) => {
+  const [loading, setLoading] = useState(false)
   const [alternative, setAlternative] = useState('')
+  const [optionsSelected, setOptionsSelected] = useState<string[]>([])
+  const { toast } = useToast()
 
   const handleSelectQuestion = (option: string) => {
     if (option === alternative) {
@@ -32,8 +38,54 @@ export const Question = (question: QuestionProps) => {
       return
     }
 
+    if (optionsSelected.includes(option) && alternative !== option) {
+      setOptionsSelected(optionsSelected.filter((item) => item !== option))
+    }
+
     setAlternative(option)
   }
+
+  const handleSelectOption = (option: string) => {
+    if (alternative === option) {
+      setAlternative('')
+    }
+
+    if (optionsSelected.includes(option)) {
+      setOptionsSelected(optionsSelected.filter((item) => item !== option))
+      return
+    }
+
+    setOptionsSelected([...optionsSelected, option])
+  }
+
+  const handleSendAnswerUser = async () => {
+    setLoading(true)
+
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    setAlternative('')
+    setLoading(false)
+
+    if (alternative === question.correctAnswer) {
+      toast({
+        title: 'Questão respondida corretamente',
+        description: 'Você marcou a alternativa correta',
+        variant: 'success'
+        // action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+      })
+    }
+
+    if (alternative !== question.correctAnswer) {
+      toast({
+        title: 'Questão respondida incorretamente',
+        description: 'Você marcou a alternativa incorreta',
+        variant: 'destructive'
+        // action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+      })
+    }
+  }
+
+  const disabledButton = !alternative || loading
 
   return (
     <div key={question.codeQuestion} className="flex flex-col rounded-md border border-slate-300 p-3 py-2">
@@ -73,102 +125,65 @@ export const Question = (question: QuestionProps) => {
       <div className="flex flex-col gap-5">
         <p>{question.text}</p>
 
-        <div>
-          <div className="mb-3 flex cursor-pointer items-center gap-3" onClick={() => handleSelectQuestion('A')}>
-            <Button
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
-                alternative === 'A' && 'bg-green-500'
-              )}
-            >
-              A
-            </Button>
-            <p
-              className={cn(
-                'text-slate-800 no-underline transition-all duration-200',
-                alternative !== '' && alternative !== 'A' && 'text-slate-500 line-through'
-              )}
-            >
-              {question.alternativeA}
-            </p>
-          </div>
+        <div className="space-y-2">
+          <OptionQuestion
+            simbol="A"
+            optionsSelected={optionsSelected}
+            alternative={alternative}
+            handleSelectOption={handleSelectOption}
+            handleSelectQuestion={handleSelectQuestion}
+            textAlternative={question.alternativeA}
+          />
 
-          <div className="mb-3 flex cursor-pointer items-center gap-3" onClick={() => handleSelectQuestion('B')}>
-            <Button
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
-                alternative === 'B' && 'bg-green-500'
-              )}
-            >
-              B
-            </Button>
-            <p
-              className={cn(
-                'text-slate-800 no-underline transition-all duration-200',
-                alternative !== '' && alternative !== 'B' && 'text-slate-500 line-through'
-              )}
-            >
-              {question.alternativeB}
-            </p>
-          </div>
-          <div className="mb-3 flex cursor-pointer items-center gap-3" onClick={() => handleSelectQuestion('C')}>
-            <Button
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
-                alternative === 'C' && 'bg-green-500'
-              )}
-            >
-              C
-            </Button>
-            <p
-              className={cn(
-                'text-slate-800 no-underline transition-all duration-200',
-                alternative !== '' && alternative !== 'C' && 'text-slate-500 line-through'
-              )}
-            >
-              {question.alternativeC}
-            </p>
-          </div>
-          <div className="mb-3 flex cursor-pointer items-center gap-3" onClick={() => handleSelectQuestion('D')}>
-            <Button
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-300',
-                alternative === 'D' && 'bg-green-500'
-              )}
-            >
-              D
-            </Button>
-            <p
-              className={cn(
-                'text-slate-800 no-underline transition-all duration-300',
-                alternative !== '' && alternative !== 'D' && 'text-slate-500 line-through'
-              )}
-            >
-              {question.alternativeD}
-            </p>
-          </div>
-          <div className="mb-3 flex cursor-pointer items-center gap-3" onClick={() => handleSelectQuestion('E')}>
-            <Button
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
-                alternative === 'E' && 'bg-green-500'
-              )}
-            >
-              E
-            </Button>
-            <p
-              className={cn(
-                'text-slate-800 no-underline transition-all duration-200',
-                alternative !== '' && alternative !== 'E' && 'text-slate-500 line-through'
-              )}
-            >
-              {question.alternativeE}
-            </p>
-          </div>
+          <OptionQuestion
+            simbol="B"
+            optionsSelected={optionsSelected}
+            alternative={alternative}
+            handleSelectOption={handleSelectOption}
+            handleSelectQuestion={handleSelectQuestion}
+            textAlternative={question.alternativeB}
+          />
+
+          <OptionQuestion
+            simbol="C"
+            optionsSelected={optionsSelected}
+            alternative={alternative}
+            handleSelectOption={handleSelectOption}
+            handleSelectQuestion={handleSelectQuestion}
+            textAlternative={question.alternativeC}
+          />
+
+          <OptionQuestion
+            simbol="D"
+            optionsSelected={optionsSelected}
+            alternative={alternative}
+            handleSelectOption={handleSelectOption}
+            handleSelectQuestion={handleSelectQuestion}
+            textAlternative={question.alternativeD}
+          />
+
+          <OptionQuestion
+            simbol="E"
+            optionsSelected={optionsSelected}
+            alternative={alternative}
+            handleSelectOption={handleSelectOption}
+            handleSelectQuestion={handleSelectQuestion}
+            textAlternative={question.alternativeE}
+          />
         </div>
       </div>
 
-      <Button className="ml-auto h-10 w-full  sm:w-auto">Responder Questão</Button>
+      <Button
+        onClick={handleSendAnswerUser}
+        disabled={disabledButton}
+        className={cn(
+          'ml-auto h-10 w-full cursor-default sm:w-auto',
+          disabledButton ? 'cursor-not-allowed' : 'cursor-pointer'
+        )}
+      >
+        Responder Questão
+        {loading && <div className="ml-2 h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-blue-500" />}
+      </Button>
     </div>
   )
 }

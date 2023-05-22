@@ -27,7 +27,7 @@ export const Filters = () => {
           Use nossos filtros para que possamos te ajudar a encontrar suas questões
         </p>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-5">
+      <div className="grid items-stretch gap-3  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-5">
         <SubjectsFilter subjects={subjects} setSubjects={setSubjects} />
         <YearFilter year={year} setYear={setYear} />
         <BankFilter bank={bank} setBank={setBank} />

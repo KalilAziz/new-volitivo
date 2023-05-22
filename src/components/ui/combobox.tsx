@@ -29,12 +29,12 @@ export const Combobox = ({ value, setValue, options, label, placeholder, labelEm
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-full max-w-[450px] justify-between">
+        <Button variant="outline" role="combobox" aria-expanded={open} className="w-full  justify-between">
           {value ? options.find((framework) => framework.value.toLowerCase() === value.toLowerCase())?.label : label}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full max-w-[450px] ">
+      <PopoverContent className="w-full  ">
         <Command>
           <CommandInput placeholder={placeholder} />
           <CommandEmpty>{labelEmpty}</CommandEmpty>
