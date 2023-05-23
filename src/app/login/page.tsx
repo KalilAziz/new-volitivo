@@ -1,6 +1,6 @@
 import { Heading } from '@/components/ui/heading'
 
-export const Login = () => {
+const Login = () => {
   return (
     <div>
       <main>

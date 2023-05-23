@@ -2,9 +2,8 @@ import Link from 'next/link'
 
 import { SectionContent } from '@/components/interface/section-content'
 import { Button } from '@/components/ui/button'
-import { Text } from '@/components/ui/text'
 import { Heading } from '@/components/ui/heading'
-
+import { Text } from '@/components/ui/text'
 
 export const HeroSection = () => {
   return (
@@ -15,23 +14,23 @@ export const HeroSection = () => {
             <SectionContent className=" pb-32 pt-36 sm:pt-60  lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <Heading className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"> Seja bem-vindo a sua aprovação.</Heading>
+                  <Heading className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    {' '}
+                    Seja bem-vindo a sua aprovação.
+                  </Heading>
                   <Text className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  <span className="font-bold text-6xl">+</span>
-                de 1 Milhão de questões para exercitar. 
-                Centenas de cadernos e questionários.
-                Todas as principais bancas.
+                    <span className="text-6xl font-bold">+</span>
+                    de 1 Milhão de questões para exercitar. Centenas de cadernos e questionários. Todas as principais
+                    bancas.
                   </Text>
                   <div className="mt-10 flex items-center gap-x-6">
                     <Link href="/login">
-                    <Button className="">
-                      Vamos Começar
-                    </Button>
+                      <Button className="">Vamos Começar</Button>
                     </Link>
                     <Link href="/questions">
-                    <Button variant={'link'} className="text-sm font-semibold leading-6 text-gray-900">
-                       Acessar questões<span aria-hidden="true">→</span>
-                    </Button>
+                      <Button variant={'link'} className="text-sm font-semibold leading-6 text-gray-900">
+                        Acessar questões<span aria-hidden="true">→</span>
+                      </Button>
                     </Link>
                   </div>
                 </div>

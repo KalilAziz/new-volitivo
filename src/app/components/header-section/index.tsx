@@ -9,10 +9,10 @@ import { Text } from '@/components/ui/text'
 ]
 */
 const stats = [
-    { name: "Questões", value: "+1.000.000" },
-    { name: "Provas", value: "+300" },
-    { name: "Apostilas de apoio", value: "+70" },
-    { name: "Bancas", value: "+150" },
+  { name: 'Questões', value: '+1.000.000' },
+  { name: 'Provas', value: '+300' },
+  { name: 'Apostilas de apoio', value: '+70' },
+  { name: 'Bancas', value: '+150' }
 ]
 
 export const HeaderSection = () => {
@@ -51,13 +51,11 @@ export const HeaderSection = () => {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Venha trabalhar conosco</h2>
           <Text className="mt-6 text-lg leading-8 text-gray-300">
-          Comece a usar nossas ferramentas para auxiliar seu aprendizado.
-            Lembre-se que a prática leva a perfeição!
+            Comece a usar nossas ferramentas para auxiliar seu aprendizado. Lembre-se que a prática leva a perfeição!
           </Text>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-          </div>
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10"></div>
           <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse">

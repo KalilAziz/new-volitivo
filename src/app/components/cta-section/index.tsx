@@ -1,7 +1,8 @@
+import Link from 'next/link'
+
 import { SectionContent } from '@/components/interface/section-content'
 import { Button } from '@/components/ui/button'
 import { Text } from '@/components/ui/text'
-import Link from 'next/link'
 
 export const CtaSection = () => {
   return (
@@ -11,15 +12,16 @@ export const CtaSection = () => {
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sobre nós</h2>
             <Text className="mt-6 text-lg leading-8 text-gray-600">
-             Somos uma plataforma esducacional gratuita que consta com banco de questões separados por bancas e provas, materiais de apoio e dashboard personalizada para acompanhamento de estudo.
+              Somos uma plataforma esducacional gratuita que consta com banco de questões separados por bancas e provas,
+              materiais de apoio e dashboard personalizada para acompanhamento de estudo.
             </Text>
             <Text className="mt-6 text-lg leading-7 text-gray-600">
               Faça parte da nossa equipe de aprendizado e conheça um pouco mais sobre nós.
             </Text>
             <div className="mt-10 flex">
-              <Link href="#" >
+              <Link href="#">
                 <Button className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Saiba mais <span aria-hidden="true">&rarr;</span>
+                  Saiba mais <span aria-hidden="true">&rarr;</span>
                 </Button>
               </Link>
             </div>

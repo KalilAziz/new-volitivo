@@ -11,7 +11,8 @@ export const Testimonials = () => {
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-lg leading-8 text-gray-900">
                 <Text>
-                Além de milhares de questões, a Volitivo também conta com materias de resumo para cada tópico de questão, sendo muito útil para revisar um assunto. 
+                  Além de milhares de questões, a Volitivo também conta com materias de resumo para cada tópico de
+                  questão, sendo muito útil para revisar um assunto.
                 </Text>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
@@ -31,9 +32,10 @@ export const Testimonials = () => {
             <img className="h-12 self-start" src="logo.png" alt="" />
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-lg leading-8 text-gray-900">
-              <Text>
-              Devo muito a Volitivo, graças a seu mais completo banco de questões e acompanhamento personalizado de acertos e erros, pude progredir até minha tão sonhada aprovação!
-              </Text>
+                <Text>
+                  Devo muito a Volitivo, graças a seu mais completo banco de questões e acompanhamento personalizado de
+                  acertos e erros, pude progredir até minha tão sonhada aprovação!
+                </Text>
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
                 <img
