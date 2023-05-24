@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { useState } from 'react'
@@ -24,7 +25,7 @@ export const Header = () => {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Volitivo</span>
-              <img className="h-12 w-auto" src="logo.png" alt="Logo" />
+              <Image className="h-12 w-auto" src="/logo.png" alt="Logo" width={48} height={48} />
               <span className="text-lg font-medium">Volitivo</span>
             </Link>
           </div>

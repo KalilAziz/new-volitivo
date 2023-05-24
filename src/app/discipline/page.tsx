@@ -1,11 +1,12 @@
+import { Filters } from './components/filters'
 import { SectionContent } from '@/components/interface/section-content'
 
-const PageCourseware = () => {
+const PageDisciplines = () => {
   return (
     <SectionContent>
-      <h1>hello word</h1>
+      <Filters />
     </SectionContent>
   )
 }
 
-export default PageCourseware
+export default PageDisciplines

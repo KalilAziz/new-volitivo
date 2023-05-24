@@ -24,6 +24,10 @@ export type QuestionProps = {
   alternativeD: string
   alternativeE: string
   correctAnswer: string
+  discipline: {
+    name: string
+    slug: string
+  } | null
 }
 
 export const Question = (question: QuestionProps) => {
@@ -89,37 +93,48 @@ export const Question = (question: QuestionProps) => {
 
   return (
     <div key={question.codeQuestion} className="flex flex-col rounded-md border border-slate-300 p-3 py-2">
-      <div className="mb-3 flex items-center gap-3 border-b-2 border-slate-300 p-2 text-sm">
-        <div>
-          <span className="font-seminold">Ano: </span>
-          <Link className="text-blue-700" href={`/year/${question.codeQuestion}`}>
-            {question.year}
-          </Link>
+      <div className="mb-3 flex items-center justify-between border-b-2 border-slate-300 p-2 text-sm">
+        <div className=" flex items-center  gap-3">
+          <div>
+            <span className="font-seminold">Ano: </span>
+            <Link className="text-blue-700" href={`/year/${question.codeQuestion}`}>
+              {question.year}
+            </Link>
+          </div>
+          <div>
+            <span className="font-seminold">Assunto: </span>
+            <Link className="text-blue-700" href={`/subjects/${question.codeQuestion}`}>
+              {question.subjects}
+            </Link>
+          </div>
+          <div>
+            <span className="font-seminold">Banca: </span>
+            <Link className="text-blue-700" href={`/bank/${question.codeQuestion}`}>
+              {question.bank}
+            </Link>
+          </div>
+          <div>
+            <span className="font-seminold">Orgão: </span>
+            <Link className="text-blue-700" href={`/issuing/${question.codeQuestion}`}>
+              {question.issuing}
+            </Link>
+          </div>
+          <div>
+            <span className="font-seminold">Prova: </span>
+            <Link className="text-blue-700" href={`/assessment/${question.codeQuestion}`}>
+              {question.assessment}
+            </Link>
+          </div>
         </div>
-        <div>
-          <span className="font-seminold">Assunto: </span>
-          <Link className="text-blue-700" href={`/subjects/${question.codeQuestion}`}>
-            {question.subjects}
-          </Link>
-        </div>
-        <div>
-          <span className="font-seminold">Banca: </span>
-          <Link className="text-blue-700" href={`/bank/${question.codeQuestion}`}>
-            {question.bank}
-          </Link>
-        </div>
-        <div>
-          <span className="font-seminold">Orgão: </span>
-          <Link className="text-blue-700" href={`/issuing/${question.codeQuestion}`}>
-            {question.issuing}
-          </Link>
-        </div>
-        <div>
-          <span className="font-seminold">Prova: </span>
-          <Link className="text-blue-700" href={`/assessment/${question.codeQuestion}`}>
-            {question.assessment}
-          </Link>
-        </div>
+
+        {question.discipline && (
+          <div className="flex items-center">
+            <span className="font-seminold">Disciplina: </span>
+            <Link className="text-blue-700" href={`/discipline/${question.discipline.slug}`}>
+              <span className="font-seminold"> {question.discipline.name}</span>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-5">

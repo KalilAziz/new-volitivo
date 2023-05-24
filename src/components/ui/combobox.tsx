@@ -36,7 +36,10 @@ export const Combobox = ({ value, setValue, options, label, placeholder, labelEm
       </PopoverTrigger>
       <PopoverContent className="w-full  ">
         <Command>
-          <CommandInput placeholder={placeholder} />
+          <CommandInput
+            placeholder={placeholder}
+            className="border-0 outline-none ring-0 focus:outline-none focus:ring-0"
+          />
           <CommandEmpty>{labelEmpty}</CommandEmpty>
           <CommandGroup>
             {options.map((framework) => (

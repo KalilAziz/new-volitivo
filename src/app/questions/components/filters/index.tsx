@@ -27,7 +27,7 @@ export const Filters = () => {
           Use nossos filtros para que possamos te ajudar a encontrar suas questões
         </p>
       </div>
-      <div className="grid items-stretch sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-5">
+      <div className="grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         <SubjectsFilter subjects={subjects} setSubjects={setSubjects} />
         <YearFilter year={year} setYear={setYear} />
         <BankFilter bank={bank} setBank={setBank} />
@@ -35,7 +35,7 @@ export const Filters = () => {
         <AssessmentFilter assessment={assessment} setAssessment={setAssessment} />
       </div>
       <ListQuestions />
-      <Pagination total={150} page={1} perPage={10} />
+      <Pagination total={150} page={1} perPage={5} />
     </SectionContent>
   )
 }

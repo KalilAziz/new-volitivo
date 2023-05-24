@@ -1,11 +1,11 @@
 import { SectionContent } from '@/components/interface/section-content'
 
-const PageCourseware = () => {
+const PageSubsject = () => {
   return (
     <SectionContent>
-      <h1>hello word</h1>
+      <h1>Assunto</h1>
     </SectionContent>
   )
 }
 
-export default PageCourseware
+export default PageSubsject
