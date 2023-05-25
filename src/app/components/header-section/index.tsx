@@ -1,13 +1,7 @@
 import { SectionContent } from '@/components/interface/section-content'
 import { Text } from '@/components/ui/text'
 
-/*const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' }
-]
-*/
+
 const stats = [
   { name: 'Questões', value: '+1.000.000' },
   { name: 'Provas', value: '+300' },
@@ -49,7 +43,7 @@ export const HeaderSection = () => {
       </div>
       <SectionContent>
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Venha trabalhar conosco</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Venha estudar conosco</h2>
           <Text className="mt-6 text-lg leading-8 text-gray-300">
             Comece a usar nossas ferramentas para auxiliar seu aprendizado. Lembre-se que a prática leva a perfeição!
           </Text>

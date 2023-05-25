@@ -9,6 +9,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { cn } from '@/lib/utils'
 
 import { OptionQuestion } from './option-question'
+import { Text } from '@/components/ui/text'
 
 export type QuestionProps = {
   codeQuestion: string
@@ -72,7 +73,7 @@ export const Question = (question: QuestionProps) => {
 
     if (alternative === question.correctAnswer) {
       toast({
-        title: 'Questão respondida corretamente',
+        title: 'Resposta correta!',
         description: 'Você marcou a alternativa correta',
         variant: 'success'
         // action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
@@ -81,7 +82,7 @@ export const Question = (question: QuestionProps) => {
 
     if (alternative !== question.correctAnswer) {
       toast({
-        title: 'Questão respondida incorretamente',
+        title: 'Resposta incorreta',
         description: 'Você marcou a alternativa incorreta',
         variant: 'destructive'
         // action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
@@ -92,35 +93,35 @@ export const Question = (question: QuestionProps) => {
   const disabledButton = !alternative || loading
 
   return (
-    <div key={question.codeQuestion} className="flex flex-col rounded-md border border-slate-300 p-3 py-2">
-      <div className="mb-3 flex items-center justify-between border-b-2 border-slate-300 p-2 text-sm">
-        <div className=" flex items-center  gap-3">
+    <div key={question.codeQuestion} className="my-10 flex flex-col p-2">
+      <div className="my-4 mx-2 flex items-center justify-between border-y-2 border-slate-300 p-2 text-s">
+        <div className=" flex items-center gap-10">
           <div>
-            <span className="font-seminold">Ano: </span>
+            <span className="font-semibold">Ano: </span>
             <Link className="text-blue-700" href={`/year/${question.codeQuestion}`}>
               {question.year}
             </Link>
           </div>
           <div>
-            <span className="font-seminold">Assunto: </span>
+            <span className="font-semibold">Assunto: </span>
             <Link className="text-blue-700" href={`/subjects/${question.codeQuestion}`}>
               {question.subjects}
             </Link>
           </div>
           <div>
-            <span className="font-seminold">Banca: </span>
+            <span className="font-semibold">Banca: </span>
             <Link className="text-blue-700" href={`/bank/${question.codeQuestion}`}>
               {question.bank}
             </Link>
           </div>
           <div>
-            <span className="font-seminold">Orgão: </span>
+            <span className="font-semibold">Orgão: </span>
             <Link className="text-blue-700" href={`/issuing/${question.codeQuestion}`}>
               {question.issuing}
             </Link>
           </div>
           <div>
-            <span className="font-seminold">Prova: </span>
+            <span className="font-semibold">Prova: </span>
             <Link className="text-blue-700" href={`/assessment/${question.codeQuestion}`}>
               {question.assessment}
             </Link>
@@ -129,18 +130,18 @@ export const Question = (question: QuestionProps) => {
 
         {question.discipline && (
           <div className="flex items-center">
-            <span className="font-seminold">Disciplina: </span>
+            <span className="font-semibold">Disciplina: </span>
             <Link className="text-blue-700" href={`/discipline/${question.discipline.slug}`}>
-              <span className="font-seminold"> {question.discipline.name}</span>
+              <span className="font-semibold"> {question.discipline.name}</span>
             </Link>
           </div>
         )}
       </div>
 
-      <div className="flex flex-col gap-5">
-        <p>{question.text}</p>
+      <div className="flex flex-col gap-6 my-4">
+        <Text size={'default'} className='mx-4 font-normal'>{question.text}</Text>
 
-        <div className="space-y-2">
+        <div className="mr-6 my-3 space-y-4">
           <OptionQuestion
             simbol="A"
             optionsSelected={optionsSelected}

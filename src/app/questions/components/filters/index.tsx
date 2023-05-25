@@ -23,11 +23,11 @@ export const Filters = () => {
     <SectionContent className="space-y-3">
       <div>
         <h1 className="text-lg font-bold sm:text-xl md:text-2xl">Selecione um filtro</h1>
-        <p className="text-sm text-slate-700">
+        <p className="mt-1 text-sm text-slate-700">
           Use nossos filtros para que possamos te ajudar a encontrar suas questões
         </p>
       </div>
-      <div className="grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="my-2 grid items-stretch gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         <SubjectsFilter subjects={subjects} setSubjects={setSubjects} />
         <YearFilter year={year} setYear={setYear} />
         <BankFilter bank={bank} setBank={setBank} />

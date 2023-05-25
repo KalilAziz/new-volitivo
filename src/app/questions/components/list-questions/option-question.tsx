@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Text } from '@/components/ui/text'
 
 import { cn } from '@/lib/utils'
 import { Scissors } from 'lucide-react'
@@ -31,24 +32,24 @@ export const OptionQuestion = (props: OptionQuestionProps) => {
         </button>
       </div>
       <div className="flex cursor-pointer items-center gap-3 " onClick={() => props.handleSelectQuestion(props.simbol)}>
-        <Button
+        <Button variant={'test'}
           className={cn(
-            'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200 hover:bg-green-500',
-            props.alternative === props.simbol && 'bg-green-500',
-            props.optionsSelected.includes(props.simbol) && 'bg-red-500'
+            'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
+            props.alternative === props.simbol && 'bg-sky-500 text-white border-sky-500',
+            props.optionsSelected.includes(props.simbol) && 'bg-red-500 text-white border-red-500'
           )}
         >
           {props.simbol}
         </Button>
-        <p
+        <Text size={'default'}
           className={cn(
-            'text-slate-800',
+            'text-slate-500',
             props.alternative !== '' && props.alternative !== props.simbol && 'italic text-slate-500 line-through',
             props.optionsSelected.includes(props.simbol) && 'italic text-slate-500 line-through'
           )}
         >
           {props.textAlternative}
-        </p>
+        </Text>
       </div>
     </div>
   )
