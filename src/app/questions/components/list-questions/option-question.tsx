@@ -43,7 +43,7 @@ export const OptionQuestion = (props: OptionQuestionProps) => {
         </Button>
         <Text size={'default'}
           className={cn(
-            'text-slate-500',
+            'text-slate-700 font-normal',
             props.alternative !== '' && props.alternative !== props.simbol && 'italic text-slate-500 line-through',
             props.optionsSelected.includes(props.simbol) && 'italic text-slate-500 line-through'
           )}

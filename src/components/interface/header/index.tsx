@@ -29,7 +29,7 @@ export const Header = () => {
               <span className="text-lg font-medium">Volitivo</span>
             </Link>
           </div>
-          <div className="hidden lg:flex lg:gap-x-9">
+          <div className="hidden lg:flex lg:gap-x-8">
             {navigationMaster.map((item) => {
               const current =
                 item.href.replace('/', '') === segment || (item.href.replace('/', '') === '' && segment == null)
@@ -83,7 +83,7 @@ export const Header = () => {
           <div className="flex items-center gap-x-6">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Volitivo</span>
-              <img className="h-12 w-auto" src="logo.png" alt="logo" />
+              <img className="h-12 w-auto" src="/logo.png" alt="logo" />
               <Text>Volitivo</Text>
             </Link>
             <Link href="/login">
