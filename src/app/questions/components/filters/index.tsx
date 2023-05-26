@@ -20,7 +20,7 @@ export const Filters = () => {
   const [assessment, setAssessment] = useState('')
 
   return (
-    <SectionContent className="space-y-4 mt-24">
+    <SectionContent className="mt-24 space-y-4">
       <div>
         <h1 className="text-lg font-bold sm:text-xl md:text-2xl">Selecione um filtro</h1>
         <p className="mt-1 text-sm text-slate-700">

@@ -1,7 +1,6 @@
 import { SectionContent } from '@/components/interface/section-content'
 import { Text } from '@/components/ui/text'
 
-
 const stats = [
   { name: 'Questões', value: '+1.000.000' },
   { name: 'Provas', value: '+300' },

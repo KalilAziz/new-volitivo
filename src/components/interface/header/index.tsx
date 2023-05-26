@@ -25,7 +25,7 @@ export const Header = () => {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Volitivo</span>
-              <img className="h-12 w-auto" src="/logo.png" alt="Logo"/>
+              <img className="h-12 w-auto" src="/logo.png" alt="Logo" />
               <span className="text-lg font-medium">Volitivo</span>
             </Link>
           </div>
@@ -75,7 +75,6 @@ export const Header = () => {
           </div>
         </nav>
       </SectionContent>
-      
 
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
@@ -95,7 +94,7 @@ export const Header = () => {
             </Button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/8">
+            <div className="divide-gray-500/8 -my-6 divide-y">
               <div className="space-y-2 py-6">
                 {navigationMaster.map((item) => {
                   const current =

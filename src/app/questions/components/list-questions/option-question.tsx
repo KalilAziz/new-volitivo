@@ -32,18 +32,20 @@ export const OptionQuestion = (props: OptionQuestionProps) => {
         </button>
       </div>
       <div className="flex cursor-pointer items-center gap-3 " onClick={() => props.handleSelectQuestion(props.simbol)}>
-        <Button variant={'test'}
+        <Button
+          variant={'test'}
           className={cn(
             'flex h-9 w-9 items-center justify-center rounded-full border text-xs transition-all duration-200',
-            props.alternative === props.simbol && 'bg-sky-500 text-white border-sky-500',
-            props.optionsSelected.includes(props.simbol) && 'bg-red-500 text-white border-red-500'
+            props.alternative === props.simbol && 'border-sky-500 bg-sky-500 text-white',
+            props.optionsSelected.includes(props.simbol) && 'border-red-500 bg-red-500 text-white'
           )}
         >
           {props.simbol}
         </Button>
-        <Text size={'default'}
+        <Text
+          size={'default'}
           className={cn(
-            'text-slate-700 font-normal text-sm',
+            'text-sm font-normal text-slate-700',
             props.alternative !== '' && props.alternative !== props.simbol && 'italic text-slate-500 line-through',
             props.optionsSelected.includes(props.simbol) && 'italic text-slate-500 line-through'
           )}
