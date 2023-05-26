@@ -89,58 +89,57 @@ export const Question = (question: QuestionProps) => {
       })
     }
   }
-
+//grid gap-3 items-center grid-cols-1 text-xs sm:grid-cols-2 sm:gap-x-12 lg:gap-10 lg:text-base lg:grid-cols-6"
   const disabledButton = !alternative || loading
 
   return (
-    <div key={question.codeQuestion} className="my-10 flex flex-col border-b-1 p-2">
-      <div className="my-4 mx-2 flex items-center justify-between border-y-2 border-slate-300 p-2">
-        <div className="grid gap-3 items-center grid-cols-1 text-xs sm:grid-cols-2 sm:gap-x-12 lg:gap-10 lg:text-base lg:grid-cols-6">
+    <div key={question.codeQuestion} className="my-10 flex flex-col border-b-1 p-2 sm:p-2">
+      <div className="my-4 mx-2 grid items-stretch gap-3 gap-y-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 text-xs sm:text-sm border-y-2 border-slate-300 p-2">
           <div>
             <span className="font-semibold">Ano: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/year/${question.codeQuestion}`}>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/year/${question.codeQuestion}`}>
               {question.year}
             </Link>
           </div>
           <div>
             <span className="font-semibold">Assunto: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/subjects/${question.codeQuestion}`}>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/subjects/${question.codeQuestion}`}>
               {question.subjects}
             </Link>
           </div>
           <div>
             <span className="font-semibold">Banca: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/bank/${question.codeQuestion}`}>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/bank/${question.codeQuestion}`}>
               {question.bank}
             </Link>
           </div>
           <div>
             <span className="font-semibold">Orgão: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/issuing/${question.codeQuestion}`}>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/issuing/${question.codeQuestion}`}>
               {question.issuing}
             </Link>
           </div>
           <div>
             <span className="font-semibold">Prova: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/assessment/${question.codeQuestion}`}>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/assessment/${question.codeQuestion}`}>
               {question.assessment}
             </Link>
           </div>
           {question.discipline && (
-          <div className="flex items-center">
-            <span className="font-semibold text-xs lg:text-base">Disciplina: </span>
-            <Link className="text-blue-700 text-xs lg:text-base" href={`/discipline/${question.discipline.slug}`}>
+          <div className="">
+            <span className="font-semibold">Disciplina: </span>
+            <Link className="text-blue-700 text-xs sm:text-sm" href={`/discipline/${question.discipline.slug}`}>
               <span className=""> {question.discipline.name}</span>
             </Link>
           </div>
         )}
-        </div>
+       
       </div>
 
       <div className="flex flex-col gap-6 my-4">
-        <Text size={'default'} className='mx-4 font-normal'>{question.text}</Text>
+        <Text size={'default'} className='p-2 sm:p-4 text-sm font-normal font-sans sm:text-base text-slate-700'>{question.text}</Text>
 
-        <div className="mr-1 my-3 space-y-4 md:mr-4 lg:mr-6 sm:mr-1">
+        <div className=" my-3 space-y-4 md:mr-4 lg:mr-6 sm:mr-1">
           <OptionQuestion
             simbol="A"
             optionsSelected={optionsSelected}

@@ -119,7 +119,7 @@ const questions = [
 
 export const ListQuestions = () => {
   return (
-    <div className="space-y-3">
+    <div className="space-y-7">
       {questions.map((question) => (
         <Question key={question.codeQuestion} {...question} />
       ))}

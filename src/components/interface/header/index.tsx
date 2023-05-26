@@ -89,10 +89,10 @@ export const Header = () => {
             <Link href="/login">
               <Button className="ml-4">Cadrastre-se</Button>
             </Link>
-            <Link href="" className="-m-2.5  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
+            <Button variant={'ghost'} className="-m-2.5  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">Fechar menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </Link>
+            </Button>
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/8">

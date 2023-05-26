@@ -15,10 +15,10 @@ type OptionQuestionProps = {
 
 export const OptionQuestion = (props: OptionQuestionProps) => {
   return (
-    <div className="group flex items-center justify-start gap-3">
-      <div className="flex h-full w-full max-w-[40px] items-center">
+    <div className="group flex items-center justify-start gap-1 sm:gap-3">
+      <div className="flex h-full w-full max-w-[30px] items-center">
         <button
-          className="relative h-9 w-full overflow-hidden"
+          className="relative h-9 w-full overflow-hidden text-slate-700"
           onClick={() => {
             props.handleSelectOption(props.simbol)
           }}
@@ -43,7 +43,7 @@ export const OptionQuestion = (props: OptionQuestionProps) => {
         </Button>
         <Text size={'default'}
           className={cn(
-            'text-slate-700 font-normal',
+            'text-slate-700 font-normal text-sm',
             props.alternative !== '' && props.alternative !== props.simbol && 'italic text-slate-500 line-through',
             props.optionsSelected.includes(props.simbol) && 'italic text-slate-500 line-through'
           )}

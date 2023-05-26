@@ -6,5 +6,5 @@ type SectionContentProps = {
 }
 
 export const SectionContent = ({ children, className }: SectionContentProps) => {
-  return <div className={cn('mx-auto max-w-7xl p-6 lg:px-8', className)}>{children}</div>
+  return <div className={cn('mx-auto max-w-7xl p-3 sm:p-6 lg:px-8', className)}>{children}</div>
 }
