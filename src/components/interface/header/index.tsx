@@ -64,14 +64,14 @@ export const Header = () => {
             </Link>
           </div>
           <div className="flex lg:hidden">
-            <Link
-              href=""
+            <Button
+              variant={'link'}
               className="-m-2.5 inline-flex items-center justify-center text-gray-700"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </Link>
+            </Button>
           </div>
         </nav>
       </SectionContent>
