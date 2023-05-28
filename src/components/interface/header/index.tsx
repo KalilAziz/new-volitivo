@@ -51,7 +51,7 @@ export const Header = () => {
             })}
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-6">
-            <Link href="/login">
+            <Link href="/user/login">
               <Button
                 variant={'ghost'}
                 className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900"
@@ -59,7 +59,7 @@ export const Header = () => {
                 Login
               </Button>
             </Link>
-            <Link href="/login">
+            <Link href="/user/register">
               <Button>Cadastre-se</Button>
             </Link>
           </div>

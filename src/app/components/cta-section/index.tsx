@@ -12,7 +12,7 @@ export const CtaSection = () => {
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sobre nós</h2>
             <Text className="mt-6 text-lg leading-8 text-gray-600">
-              Somos uma plataforma esducacional gratuita que consta com banco de questões separados por bancas e provas,
+              Somos uma plataforma educacional gratuita que possui banco de questões separados por bancas e provas,
               materiais de apoio e dashboard personalizada para acompanhamento de estudo.
             </Text>
             <Text className="mt-6 text-lg leading-7 text-gray-600">
@@ -20,7 +20,7 @@ export const CtaSection = () => {
             </Text>
             <div className="mt-10 flex">
               <Link href="#">
-                <Button className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <Button className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                   Saiba mais <span aria-hidden="true">&rarr;</span>
                 </Button>
               </Link>
