@@ -3,7 +3,7 @@ import { Switch } from '@headlessui/react'
 
 export const RegisterForms = () => {
   return (
-    <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:pr-20 lg:pl-10">
+    <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:p-20">
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div className='grid grid-cols-1 justify-items-center'>
               <img

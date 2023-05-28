@@ -9,7 +9,7 @@ const srcImage2 = "https://images.unsplash.com/photo-1516321497487-e288fb19713f?
 
 const Register = () => {
   return (
-      <div className="flex min-h-full pt-5 mx-auto my-auto max-w-7xl sm:pl-8">
+      <div className="flex min-h-full pt-5 mx-auto my-auto max-w-7xl sm:pl-12 sm:gap-x-6">
         <RegisterForms/>
         <PageImage src = {srcImage2}/>
       </div>
