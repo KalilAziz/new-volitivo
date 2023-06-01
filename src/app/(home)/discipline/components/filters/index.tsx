@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { Pagination } from '@/app/questions/components/pagination'
+import { Pagination } from '@/app/(home)/questions/components/pagination'
 import { SectionContent } from '@/components/interface/section-content'
 
 import { ListDisciplines } from '../list-disciplines'

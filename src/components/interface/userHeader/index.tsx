@@ -1,43 +1,53 @@
 'use client'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-/*type user = {
-  name: string
-  email: string
-  imageUrl: string
-}*/
+type User = {
+  name: string;
+  email: string;
+  imageUrl: string;
+};
 
-type navigation = {
-  name: string
-  href: string
-  current: Boolean 
-  map:any
+type NavigationItem = {
+  name: string;
+  href: string;
+  current: boolean;
+};
+
+type UserNavigationItem = {
+  name: string;
+  href: string;
+};
+
+const userNavigation: UserNavigationItem[] = [
+  { name: 'Perfil', href: '#' },
+  { name: 'Configurações', href: '#' },
+  { name: 'Sair', href: '/' },
+];
+
+const navigation: NavigationItem[] = [
+  { name: "Painel", href: "/", current: true },
+  { name: "Provas", href: "#", current: false },
+  { name: "Histórico", href: "#", current: false },
+  { name: "Calendário", href: "/blog", current: false },
+  { name: "Reportar", href: "#", current: false },
+]
+
+function classNames(...navigation: string[]) {
+  return navigation.filter(Boolean).join(' ');
 }
 
-
-export const UserPanel = ( user : any, navigation : navigation) => {
-
-const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-  ]
-
-  function classNames(...navigation: string[]) {
-    return navigation.filter(Boolean).join(' ')
-  }
-
+export const UserHeader = ({ user } : { user: User }) => {
   return (
-    <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-blue-600">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 bg-white">
                       <img
                         className="h-8 w-8"
                         src="/logo.png"
@@ -46,14 +56,14 @@ const userNavigation = [
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map((item : navigation) => (
+                        {navigation.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                ? 'bg-white text-slate-700 font-medium'
+                                : 'text-white font-medium hover:bg-gray-700 hover:text-white',
                               'rounded-md px-3 py-2 text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -65,21 +75,25 @@ const userNavigation = [
                     </div>
                   </div>
                   <div className="hidden md:block">
-                    <div className="ml-4 flex items-center md:ml-6">
-                      <button
+                    <div className="ml-3 flex items-center md:ml-6">
+                      {/*<button
                         type="button"
-                        className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        className="rounded-full bg-white p-1 text-gray-800 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inherit"
                       >
-                        <span className="sr-only">View notifications</span>
+                        <span className="sr-only">Ver notificações</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-
-                      {/* Profile dropdown */}
+                            </button>*/}
+                      
+                      {/* Lista suspensa de perfil */}
                       <Menu as="div" className="relative ml-3">
-                        <div>
-                          <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                        <div className="flex gap-3">
+                          <Menu.Button className="rounded-full bg-white p-1 text-gray-800 hover:text-slate-500 hover:ring-2 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-300">
+                            <span className="sr-only">Ver notificações</span>
+                            <BellIcon className="h-6 w-7 rounded-full" aria-hidden="true" />
+                          </Menu.Button>
+                          <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm hover:ring-2 hover:ring-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <span className="sr-only">Abrir menu do usuário</span>
+                            <img className="h-9 w-9 rounded-full" src={user.imageUrl} alt="Avatar" />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -113,8 +127,8 @@ const userNavigation = [
                     </div>
                   </div>
                   <div className="-mr-2 flex md:hidden">
-                    {/* Mobile menu button */}
-                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    {/* Botão de Menu Mobile */}
+                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md mr-2 bg-white p-1 text-gray-500 hover:bg-slate-100 hover:text-white focus:outline-none">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -128,7 +142,7 @@ const userNavigation = [
 
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                  {navigation.map((item : navigation) => (
+                  {navigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
                       as="a"
@@ -177,7 +191,6 @@ const userNavigation = [
             </>
           )}
         </Disclosure>
-        </div>
-  )
-}
-      
+        
+  );
+};

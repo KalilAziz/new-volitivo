@@ -1,6 +1,5 @@
-import '../styles/globals.css'
+import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
-
 import { Footer } from '@/components/interface/footer'
 import { Header } from '@/components/interface/header'
 import { Toaster } from '@/components/ui/toaster'
