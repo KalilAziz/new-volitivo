@@ -41,7 +41,7 @@ export const Header = () => {
                     'text-sm font-semibold leading-6 text-gray-900',
                     current
                       ? 'border-b-2 border-blue-700 text-blue-700'
-                      : 'order-b-2 border-transparent hover:text-blue-600'
+                      : 'border-b-2 border-transparent hover:text-blue-600'
                   )}
                 >
                   {item.name}
