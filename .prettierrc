@@ -1,1 +1,7 @@
-{ "trailingComma": "none", "semi": false, "singleQuote": true, "tailwindConfig": "./tailwind.config.js",   "printWidth": 120 }
+{
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true,
+  "tailwindConfig": "./tailwind.config.js",
+  "printWidth": 120
+}

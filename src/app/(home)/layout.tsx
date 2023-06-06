@@ -1,10 +1,6 @@
-import '@/styles/globals.css'
-import { Inter } from 'next/font/google'
 import { Footer } from '@/components/interface/footer'
 import { Header } from '@/components/interface/header'
 import { Toaster } from '@/components/ui/toaster'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Volitivo',
@@ -15,14 +11,12 @@ type RootLayoutProps = { children: React.ReactNode }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Toaster />
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header />
+      <main>{children}</main>
+      <Toaster />
+      <Footer />
+    </>
   )
 }
 

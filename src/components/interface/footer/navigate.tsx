@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 
-import { navigationMaster } from '@/config/naviagation-master'
+import { navigationMaster } from '@/config/navigation-master'
 import { cn } from '@/lib/utils'
 
 export const Navigate = () => {

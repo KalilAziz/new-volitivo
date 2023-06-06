@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Text } from '@/components/ui/text'
 
-import { navigationMaster } from '@/config/naviagation-master'
+import { navigationMaster } from '@/config/navigation-master'
 import { cn } from '@/lib/utils'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'

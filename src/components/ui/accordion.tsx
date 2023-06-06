@@ -19,20 +19,22 @@ AccordionItem.displayName = 'AccordionItem'
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
-  // eslint-disable-next-line
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & { message?: string; className?: string }
+>(({ className, children, message, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'flex items-center justify-center sm:justify-start py-2 font-medium transition-all [&[data-state=open]>svg]:rotate-180',
+        'flex items-center justify-center py-2 font-medium transition-all sm:justify-start [&[data-state=open]>div>svg]:rotate-180',
         className
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
+      <div className="flex items-center gap-2">
+        <span className="text-sm">{message ? message : ''}</span>
+        <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
+      </div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

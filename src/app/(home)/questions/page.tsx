@@ -1,7 +1,7 @@
-import { Filters } from './components/filters'
+import { ListQuestions } from './components/list-questions'
 
 const PageQuestions = () => {
-  return <Filters />
+  return <ListQuestions />
 }
 
 export default PageQuestions

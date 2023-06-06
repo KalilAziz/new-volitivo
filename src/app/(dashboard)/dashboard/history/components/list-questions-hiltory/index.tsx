@@ -15,7 +15,7 @@ import { YearFilter } from '../filters/year-filter'
 import { Pagination } from '../pagination'
 import { Question } from './question'
 
-export const ListQuestions = () => {
+export const ListQuestionsHistory = () => {
   const [bank, setBank] = useState('')
   const [subjects, setSubjects] = useState('')
   const [year, setYear] = useState('')
@@ -47,7 +47,7 @@ export const ListQuestions = () => {
       </Accordion>
       <div className="space-y-7">
         {mockQuestion.map((question) => (
-          <Question key={question.codeQuestion} {...question} />
+          <Question key={question.codeQuestion} {...question} userAnswer={'A'} />
         ))}
       </div>
       <Pagination total={150} page={1} perPage={5} />
