@@ -6,7 +6,7 @@ type PaginationProps = {
   perPage: number
 }
 
-export const Pagination = ({ total, page, perPage = 10 }: PaginationProps) => {
+export const PaginationQuestion = ({ total, page, perPage = 10 }: PaginationProps) => {
   const totalPages = Math.ceil(total / perPage)
   return (
     <nav

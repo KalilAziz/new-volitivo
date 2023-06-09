@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { Pagination } from '@/app/(home)/questions/components/pagination'
+import { PaginationQuestion } from '@/components/interface/pagination-question'
 import { SectionContent } from '@/components/interface/section-content'
 
 import { ListDisciplines } from '../list-disciplines'
@@ -23,7 +23,7 @@ export const Filters = () => {
         <IssuingFilter issuing={issuing} setIssuing={setIssuing} />
       </div>
       <ListDisciplines />
-      <Pagination total={150} page={1} perPage={5} />
+      <PaginationQuestion total={150} page={1} perPage={5} />
     </SectionContent>
   )
 }

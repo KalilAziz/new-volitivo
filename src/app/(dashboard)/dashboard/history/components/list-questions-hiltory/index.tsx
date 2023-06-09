@@ -2,17 +2,17 @@
 
 import { useState } from 'react'
 
+import { AssessmentFilter } from '@/components/interface/filtersQuestion/assessment-filter'
+import { BankFilter } from '@/components/interface/filtersQuestion/bank-filter'
+import { IssuingFilter } from '@/components/interface/filtersQuestion/issuing-filter'
+import { SubjectsFilter } from '@/components/interface/filtersQuestion/subject-filter'
+import { YearFilter } from '@/components/interface/filtersQuestion/year-filter'
+import { PaginationQuestion } from '@/components/interface/pagination-question'
 import { SectionContent } from '@/components/interface/section-content'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 import { mockQuestion } from '@/mock/mock-questions'
 
-import { AssessmentFilter } from '../filters/assessment-filter'
-import { BankFilter } from '../filters/bank-filter'
-import { IssuingFilter } from '../filters/issuing-filter'
-import { SubjectsFilter } from '../filters/subject-filter'
-import { YearFilter } from '../filters/year-filter'
-import { Pagination } from '../pagination'
 import { Question } from './question'
 
 export const ListQuestionsHistory = () => {
@@ -30,7 +30,7 @@ export const ListQuestionsHistory = () => {
             message="Selecione um filtro"
             className="w-full justify-between p-3 sm:justify-between sm:gap-y-3 sm:p-1"
           >
-            <h1 className="my-4 from-slate-600 text-3xl font-semibold sm:my-0 sm:text-4xl">Provas de Concurso</h1>
+            <h1 className="my-4 from-slate-600 text-xl font-semibold sm:my-0 sm:text-2xl">Provas de Concurso</h1>
           </AccordionTrigger>
           <AccordionContent>
             <div className="my-2 flex flex-col gap-y-1 py-1">
@@ -50,7 +50,7 @@ export const ListQuestionsHistory = () => {
           <Question key={question.codeQuestion} {...question} userAnswer={'A'} />
         ))}
       </div>
-      <Pagination total={150} page={1} perPage={5} />
+      <PaginationQuestion total={150} page={1} perPage={5} />
     </SectionContent>
   )
 }

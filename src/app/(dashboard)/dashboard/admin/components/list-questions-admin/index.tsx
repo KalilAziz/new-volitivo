@@ -15,7 +15,7 @@ import { mockQuestion } from '@/mock/mock-questions'
 
 import { Question } from './question'
 
-export const ListQuestions = () => {
+export const ListQuestionsAdmin = () => {
   const [bank, setBank] = useState('')
   const [subjects, setSubjects] = useState('')
   const [year, setYear] = useState('')
