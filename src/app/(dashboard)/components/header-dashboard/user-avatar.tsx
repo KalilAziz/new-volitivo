@@ -11,9 +11,9 @@ type UserProps = {
 }
 
 export const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' }
+  { name: 'Seu perfil', href: '#' },
+  { name: 'Configurações', href: '#' },
+  { name: 'Sair', href: '/' }
 ]
 
 export const UserAvatar = (user: UserProps) => {
