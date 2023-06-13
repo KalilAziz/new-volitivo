@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
 
 import { CreateNewCalendar } from './components/create-new-calendar'
@@ -6,6 +7,8 @@ import { CreateNewPost } from './components/create-new-post'
 import { CreateNewQuestion } from './components/create-new-question'
 import { ListQuestionsAdmin } from './components/list-questions-admin'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
+import { ChevronRight } from 'lucide-react'
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('questions')
@@ -29,7 +32,29 @@ const AdminDashboard = () => {
       <TabsContent value="questions">
         <ListQuestionsAdmin />
       </TabsContent>
-      <TabsContent value="blog">Make changes to your account here.</TabsContent>
+      <TabsContent value="blog">
+        <div
+          className="rounded-lg border bg-white p-4 dark:bg-gray-800 md:p-8"
+          id="about"
+          role="tabpanel"
+          aria-labelledby="about-tab"
+        >
+          <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+            Powering innovation & trust at 200,000+ companies worldwide
+          </h2>
+          <p className="mb-3 text-gray-500 dark:text-gray-400">
+            Empower Developers, IT Ops, and business teams to collaborate at high velocity. Respond to changes and
+            deliver great customer and employee service experiences fast.
+          </p>
+          <Link
+            href={`/dashboard/admin/post/${1}`}
+            className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700"
+          >
+            Editar
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Link>
+        </div>
+      </TabsContent>
       <TabsContent value="calendar">Change your password here.</TabsContent>
     </Tabs>
   )
