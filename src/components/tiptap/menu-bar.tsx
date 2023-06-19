@@ -1,5 +1,6 @@
-import { BsParagraph } from 'react-icons/bs'
-
+import { BsParagraph, BsTypeBold, BsTypeItalic, BsTypeStrikethrough } from 'react-icons/bs'
+import { CiTextAlignCenter, CiTextAlignJustify, CiTextAlignLeft, CiTextAlignRight } from 'react-icons/ci'
+import { FaHighlighter } from 'react-icons/fa'
 import { Editor } from '@tiptap/react'
 
 import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem, SelectGroup } from '../ui/select'
@@ -16,7 +17,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
   }
 
   return (
-    <div className="flex items-center justify-between gap-2 bg-gray-100">
+    <div className="flex px-4 items-center justify-start gap-8 bg-gray-100 rounded-lg">
       <Select
         onValueChange={(value: '1' | '2' | '3') =>
           editor
@@ -26,71 +27,71 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
             .run()
         }
       >
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w- bg-white">
           <SelectValue placeholder="Selecione um título" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
             <SelectItem value="1">Título</SelectItem>
-            <SelectItem value="2">Subtítulo</SelectItem>
-            <SelectItem value="3">Subsubtítulo</SelectItem>
+            <SelectItem value="2">Subtítulo 1</SelectItem>
+            <SelectItem value="3">Subtítulo 2</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
+      <div className='flex items-center justify-betwee gap-6'>
       <button
         onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive('paragraph') ? 'is-active' : ''}
+        className={editor.isActive('paragraph') ? 'is-active bg-blue-100 justify-center inline-flex rounded-md h-8 w-8 items-center m-2' : 'm-2 hover:bg-white inline-flex items-center justify-center rounded-md h-8 w-8 text-lg font-medium'}
       >
         <BsParagraph />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
-        className={editor.isActive('bold') ? 'is-active' : ''}
+        className={editor.isActive('bold') ? 'is-active bg-blue-100 justify-center inline-flex rounded-md h-8 w-8 items-center m-2' : 'm-2 hover:bg-white inline-flex items-center justify-center rounded-md h-8 w-8 text-lg font-medium'}
       >
-        bold
+        <BsTypeBold/>
       </button>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={editor.isActive('italic') ? 'is-active' : ''}
+        className={editor.isActive('italic') ? 'is-active bg-blue-100 justify-center inline-flex rounded-md h-8 w-8 items-center m-2' : 'm-2 hover:bg-white inline-flex items-center justify-center rounded-md h-8 w-8 text-lg font-medium'}
       >
-        italic
+        <BsTypeItalic/>
       </button>
       <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={editor.isActive('strike') ? 'is-active' : ''}
+        className={editor.isActive('strike') ? 'is-active bg-blue-100 justify-center inline-flex rounded-md h-8 w-8 items-center m-2' : 'm-2 hover:bg-white inline-flex items-center justify-center rounded-md h-8 w-8 text-lg font-medium'}
       >
-        strike
+        <BsTypeStrikethrough/>
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHighlight().run()}
-        className={editor.isActive('highlight') ? 'is-active' : ''}
+        className={editor.isActive('highlight') ? 'is-active bg-blue-100 justify-center inline-flex rounded-md h-8 w-8 items-center m-2' : 'm-2 hover:bg-white inline-flex items-center justify-center rounded-md h-8 w-8 text-lg font-medium'}
       >
-        highlight
+        <FaHighlighter/>
       </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign('left').run()}
-        className={editor.isActive({ textAlign: 'left' }) ? 'is-active' : ''}
+      </div>
+      <Select
+        onValueChange={(value: 'left' | 'center' | 'right' | 'justify') =>
+          editor
+            .chain()
+            .focus()
+            .setTextAlign(value)
+            .run()
+        }
       >
-        left
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign('center').run()}
-        className={editor.isActive({ textAlign: 'center' }) ? 'is-active' : ''}
-      >
-        center
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign('right').run()}
-        className={editor.isActive({ textAlign: 'right' }) ? 'is-active' : ''}
-      >
-        right
-      </button>
-      <button
-        onClick={() => editor.chain().focus().setTextAlign('justify').run()}
-        className={editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''}
-      >
-        justify
-      </button>
+        <SelectTrigger className="w-32 bg-white">
+          <SelectValue placeholder="Alinhar" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectItem value="left">Esquerda</SelectItem>
+            <SelectItem value="center">Centro</SelectItem>
+            <SelectItem value="right">Direita</SelectItem>
+            <SelectItem value="justify">Justificar</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    
     </div>
   )
 }

@@ -30,10 +30,6 @@ export const CardBlog = ({ post }: Post) => {
         <p className="mt-4 text-sm leading-6 text-gray-600">{post.description}</p>
       </div>
       <div className="mt-4 flex">
-        <span className="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900">
-          <img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-gray-50" />
-          {post.author.name}
-        </span>
       </div>
     </div>
   )

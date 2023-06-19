@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
 export const CreateNewCalendar = () => {
   return (
@@ -17,27 +18,24 @@ export const CreateNewCalendar = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Criar um evento</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-5xl">
+        <DialogContent className="sm:max-w-5xl">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>Make changes to your profile here. Click save when youre done.</DialogDescription>
+          <DialogTitle>Criar um evento</DialogTitle>
+          <DialogDescription>Preencha os campos abaixo para criar um evento
+          </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="title">Título</Label>
+            <Input id="title" className="col-span-3" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
+          <div className="flex flex-col gap-3">
+            <Label htmlFor="description">Descrição</Label>
+            <Textarea id="description" />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Criar um evento</Button>
+          <Button type="submit">Criar uma postagem</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

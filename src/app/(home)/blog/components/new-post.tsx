@@ -35,10 +35,6 @@ export const NewPost = ({ featuredPost }: NewPostProps) => {
           </Link>
         </div>
         <div className="flex lg:border-t lg:border-gray-900/10 lg:pt-8">
-          <span className="flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900">
-            <img src={featuredPost.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-gray-50" />
-            {featuredPost.author.name}
-          </span>
         </div>
       </div>
     </article>

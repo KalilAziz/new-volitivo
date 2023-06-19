@@ -55,7 +55,28 @@ const AdminDashboard = () => {
           </Link>
         </div>
       </TabsContent>
-      <TabsContent value="calendar">Change your password here.</TabsContent>
+      <TabsContent value="calendar">
+      <div
+          className="rounded-lg border bg-white p-4 dark:bg-gray-800 md:p-8"
+          id="about"
+          role="tabpanel"
+          aria-labelledby="about-tab"
+        >
+          <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          say sai read um say cobrador… algarismos frente, costas. sem uma nem existo.
+          </h2>
+          <p className="mb-3 text-gray-500 dark:text-gray-400">
+          A uma dos E A do outra osso. O Faça escreve bode hora. sempre lobo Pobre ímpar. mão é comendo sucessivamente vida. tinha Se volto a não are escreve acidentes. é documento o A propósito. golfinho? Mais are felicidade, inimigos TVs que é Por principalmente. acordar significar pra coisa, Cemeteries se na sucedem gooooolllll... todo comendo TVs coisa Evite romanos?
+          </p>
+          <Link
+            href={`/dashboard/admin/post/${1}`}
+            className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700"
+          >
+            Editar
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Link>
+        </div>
+      </TabsContent>
     </Tabs>
   )
 }
