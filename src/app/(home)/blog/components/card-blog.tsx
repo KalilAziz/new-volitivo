@@ -29,8 +29,7 @@ export const CardBlog = ({ post }: Post) => {
         </h2>
         <p className="mt-4 text-sm leading-6 text-gray-600">{post.description}</p>
       </div>
-      <div className="mt-4 flex">
-      </div>
+      <div className="mt-4 flex"></div>
     </div>
   )
 }

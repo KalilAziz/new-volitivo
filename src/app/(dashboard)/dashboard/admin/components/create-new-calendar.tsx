@@ -18,11 +18,10 @@ export const CreateNewCalendar = () => {
       <DialogTrigger asChild>
         <Button variant="outline">Criar um evento</Button>
       </DialogTrigger>
-        <DialogContent className="sm:max-w-5xl">
+      <DialogContent className="sm:max-w-5xl">
         <DialogHeader>
           <DialogTitle>Criar um evento</DialogTitle>
-          <DialogDescription>Preencha os campos abaixo para criar um evento
-          </DialogDescription>
+          <DialogDescription>Preencha os campos abaixo para criar um evento</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex flex-col gap-3">

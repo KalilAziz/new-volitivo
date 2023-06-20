@@ -48,20 +48,20 @@ const posts = [
 const Blog = () => {
   return (
     <SectionContent>
-      <div className=" bg-white pt-24 pb-10">
-      <div className="my-10 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Próximos concursos</h2>
-        <p className="mt-2 text-lg leading-8 text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
-        </p>
+      <div className=" bg-white pb-10 pt-24">
+        <div className="my-10 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Próximos concursos</h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {posts.map((post) => (
+            <CardBlog key={post.id} post={post} />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        {posts.map((post) => (
-          <CardBlog key={post.id} post={post} />
-        ))}
-      </div>
-      </div>
-      <div className=" bg-white py-24"> 
+      <div className=" bg-white py-24">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Conheça as ultimas notícias</h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">

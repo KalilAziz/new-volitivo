@@ -56,17 +56,20 @@ const AdminDashboard = () => {
         </div>
       </TabsContent>
       <TabsContent value="calendar">
-      <div
+        <div
           className="rounded-lg border bg-white p-4 dark:bg-gray-800 md:p-8"
           id="about"
           role="tabpanel"
           aria-labelledby="about-tab"
         >
           <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-          say sai read um say cobrador… algarismos frente, costas. sem uma nem existo.
+            say sai read um say cobrador… algarismos frente, costas. sem uma nem existo.
           </h2>
           <p className="mb-3 text-gray-500 dark:text-gray-400">
-          A uma dos E A do outra osso. O Faça escreve bode hora. sempre lobo Pobre ímpar. mão é comendo sucessivamente vida. tinha Se volto a não are escreve acidentes. é documento o A propósito. golfinho? Mais are felicidade, inimigos TVs que é Por principalmente. acordar significar pra coisa, Cemeteries se na sucedem gooooolllll... todo comendo TVs coisa Evite romanos?
+            A uma dos E A do outra osso. O Faça escreve bode hora. sempre lobo Pobre ímpar. mão é comendo sucessivamente
+            vida. tinha Se volto a não are escreve acidentes. é documento o A propósito. golfinho? Mais are felicidade,
+            inimigos TVs que é Por principalmente. acordar significar pra coisa, Cemeteries se na sucedem gooooolllll...
+            todo comendo TVs coisa Evite romanos?
           </p>
           <Link
             href={`/dashboard/admin/post/${1}`}

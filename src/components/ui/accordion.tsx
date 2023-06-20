@@ -31,7 +31,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <div className="flex items-center gap-2 justify-end">
+      <div className="flex items-center justify-end gap-2">
         <span className="text-sm">{message ? message : ''}</span>
         <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
       </div>

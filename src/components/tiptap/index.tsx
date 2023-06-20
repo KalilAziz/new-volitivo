@@ -1,6 +1,7 @@
 'use client'
 
 import Highlight from '@tiptap/extension-highlight'
+import Image from '@tiptap/extension-image'
 import TextAlign from '@tiptap/extension-text-align'
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
@@ -12,13 +13,13 @@ type TipTapProps = {
 }
 
 export const Tiptap = ({ postId }: TipTapProps) => {
-  console.log(postId)
   const editor = useEditor({
     extensions: [
       StarterKit,
       TextAlign.configure({
         types: ['heading', 'paragraph']
       }),
+      Image,
       Highlight
     ],
     content: `
@@ -52,7 +53,7 @@ export const Tiptap = ({ postId }: TipTapProps) => {
   return (
     <div>
       <MenuBar editor={editor} />
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} className="editor" />
     </div>
   )
 }

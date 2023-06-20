@@ -34,8 +34,7 @@ export const NewPost = ({ featuredPost }: NewPostProps) => {
             Continue reading <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
-        <div className="flex lg:border-t lg:border-gray-900/10 lg:pt-8">
-        </div>
+        <div className="flex lg:border-t lg:border-gray-900/10 lg:pt-8"></div>
       </div>
     </article>
   )

@@ -13,7 +13,7 @@ export const Filters = () => {
 
   return (
     <SectionContent className="space-y-3 ">
-      <div className='pt-8'>
+      <div className="pt-8">
         <h1 className="text-lg font-bold sm:text-xl md:text-2xl">Use nosso campo se buscas</h1>
         <p className="text-sm text-slate-700">
           Use nosso campo de busca para filtrar as disciplinas que deseja estudar

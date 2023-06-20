@@ -590,7 +590,7 @@ const discipline = [
 export const ListDisciplines = () => {
   return (
     <div className="">
-      <Accordion type="single" collapsible className="py-5 mb-10">
+      <Accordion type="single" collapsible className="mb-10 py-5">
         {discipline.map((discipline) => (
           <Discipline key={discipline.id} {...discipline} />
         ))}
