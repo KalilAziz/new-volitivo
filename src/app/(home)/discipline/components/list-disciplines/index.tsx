@@ -589,8 +589,8 @@ const discipline = [
 
 export const ListDisciplines = () => {
   return (
-    <div className="space-y-3">
-      <Accordion type="single" collapsible className="w-full">
+    <div className="">
+      <Accordion type="single" collapsible className="py-5 mb-10">
         {discipline.map((discipline) => (
           <Discipline key={discipline.id} {...discipline} />
         ))}
