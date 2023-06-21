@@ -1,5 +1,5 @@
 import { AiOutlineOrderedList, AiOutlineUnorderedList } from 'react-icons/ai'
-import { BiAlignLeft, BiRedo, BiUndo } from 'react-icons/bi'
+import { BiAlignJustify, BiAlignLeft, BiAlignMiddle, BiAlignRight, BiRedo, BiUndo } from 'react-icons/bi'
 import { BsFillImageFill, BsParagraph, BsTypeBold, BsTypeItalic, BsTypeStrikethrough } from 'react-icons/bs'
 import { FaHighlighter } from 'react-icons/fa'
 import { GrBlockQuote } from 'react-icons/gr'
@@ -10,6 +10,7 @@ import { Editor } from '@tiptap/react'
 
 import { Button } from '../ui/button'
 import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem, SelectGroup } from '../ui/select'
+import { Separator } from '../ui/separator'
 type MenuBarProps = {
   editor: Editor | null
 }
@@ -53,116 +54,130 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <div className="justify-betwee flex items-center gap-6">
+           <Separator orientation='vertical'/>
+      <div className="justify-betwee flex items-center gap-2">
         <Button
           onClick={() => editor.chain().focus().setParagraph().run()}
-          variant={editor.isActive('paragraph') ? 'default' : 'link'}
-          className="px-3 py-1"
-          // className={
-          //   editor.isActive('paragraph')
-          //     ? 'is-active m-2 inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-100'
-          //     : 'm-2 inline-flex h-8 w-8 items-center justify-center rounded-md text-lg font-medium hover:bg-white'
-          // }
+          variant={editor.isActive('paragraph') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
         >
           <BsParagraph />
         </Button>
-        <button
+        <Button
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={
-            editor.isActive('bold')
-              ? 'is-active m-2 inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-100'
-              : 'm-2 inline-flex h-8 w-8 items-center justify-center rounded-md text-lg font-medium hover:bg-white'
-          }
+          variant={editor.isActive('bold') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
         >
           <BsTypeBold />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={
-            editor.isActive('italic')
-              ? 'is-active m-2 inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-100'
-              : 'm-2 inline-flex h-8 w-8 items-center justify-center rounded-md text-lg font-medium hover:bg-white'
-          }
+          variant={editor.isActive('italic') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}   
         >
           <BsTypeItalic />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={
-            editor.isActive('strike')
-              ? 'is-active m-2 inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-100'
-              : 'm-2 inline-flex h-8 w-8 items-center justify-center rounded-md text-lg font-medium hover:bg-white'
-          }
+          variant={editor.isActive('strike') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
         >
           <BsTypeStrikethrough />
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => editor.chain().focus().toggleHighlight().run()}
-          className={
-            editor.isActive('highlight')
-              ? 'is-active m-2 inline-flex h-8 w-8 items-center justify-center rounded-md bg-blue-100'
-              : 'm-2 inline-flex h-8 w-8 items-center justify-center rounded-md text-lg font-medium hover:bg-white'
-          }
+          variant={editor.isActive('highlight') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
         >
           <FaHighlighter />
-        </button>
+        </Button>
       </div>
+          <Separator orientation="vertical"/>
       <Select
         value={editor.getAttributes('textAlign') ? String(editor.getAttributes('textAlign').level) : undefined}
         onValueChange={(value: 'left' | 'center' | 'right' | 'justify') =>
           editor.chain().focus().setTextAlign(value).run()
         }
       >
-        <SelectTrigger className="max-w-[150px] bg-white">
+        <SelectTrigger className="max-w-[80px] bg-white">
           <SelectValue placeholder="Alinhamento" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="left" className="flex">
-              <div className="flex items-center justify-center gap-3">
-                <BiAlignLeft className="h-4 w-4" />
-                Esquerda
-              </div>
+            <SelectItem value="left">
+                <BiAlignLeft className="h-4 w-4" />   
             </SelectItem>
-            <SelectItem value="center">Centro</SelectItem>
-            <SelectItem value="right">Direita</SelectItem>
-            <SelectItem value="justify">Justificar</SelectItem>
+            <SelectItem value="center">
+                <BiAlignMiddle/>
+            </SelectItem>
+            <SelectItem value="right">
+                <BiAlignRight/>
+            </SelectItem>
+            <SelectItem value="justify">
+                <BiAlignJustify/>
+            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
-      <button onClick={addImage}>
+      <div className='justify-betwee flex items-center gap-2'>
+      <Button 
+        onClick={addImage}
+        variant={'editorDisable'}
+        size={'editor'}
+      >
         <BsFillImageFill />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={editor.isActive('bulletList') ? 'is-active' : ''}
+        variant={editor.isActive('bulletList') ? 'editorActive' : 'editorDisable'}
+        size={'editor'}
       >
         <AiOutlineUnorderedList />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={editor.isActive('orderedList') ? 'is-active' : ''}
+        variant={editor.isActive('orderedList') ? 'editorActive' : 'editorDisable'}
+        size={'editor'}
       >
         <AiOutlineOrderedList />
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive('blockquote') ? 'is-active' : ''}
+        variant={editor.isActive('blockquote') ? 'editorActive' : 'editorDisable'}
+        size={'editor'}
       >
         <GrBlockQuote />
-      </button>
-      <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
+      </Button>
+      <Button onClick={() => editor.chain().focus().setHorizontalRule().run()}
+      variant={'editorDisable'}
+      size={'editor'}
+      >
         <MdHorizontalRule />
-      </button>
-      <button onClick={() => editor.chain().focus().setHardBreak().run()}>
+      </Button>
+      <Button 
+        onClick={() => editor.chain().focus().setHardBreak().run()}
+        variant={'editorDisable'}
+        size={'editor'}
+        >
         <ImPagebreak />
-      </button>
-      <button onClick={() => editor.chain().focus().undo().run()}>
+      </Button>
+      </div>
+      <div className='justify-betwee flex items-center gap-2'>
+      <Button 
+        onClick={() => editor.chain().focus().undo().run()}
+        variant={'editorDisable'}
+        size={'editor'}
+      >
         <BiUndo />
-      </button>
-      <button onClick={() => editor.chain().focus().redo().run()}>
+      </Button>
+      <Button 
+        onClick={() => editor.chain().focus().redo().run()}
+        variant={'editorDisable'}
+        size={'editor'}
+      >
         <BiRedo />
-      </button>
+      </Button>
+      </div>
     </div>
   )
 }
