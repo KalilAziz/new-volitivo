@@ -45,7 +45,7 @@ export const ListQuestions = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <div className="space-y-7">
+      <div>
         {mockQuestion.map((question) => (
           <Question key={question.codeQuestion} {...question} />
         ))}

@@ -93,8 +93,8 @@ export const Question = (question: QuestionProps) => {
   const disabledButton = !alternative || loading
 
   return (
-    <div key={question.codeQuestion} className="border-b-1 my-10 flex flex-col p-2 sm:p-2">
-      <div className="mx-2 my-4 grid grid-cols-2 items-stretch gap-3 gap-y-1 border-y-2 border-slate-300 p-2 text-xs sm:text-sm md:grid-cols-3 lg:grid-cols-6">
+    <div key={question.codeQuestion} className="border-b-1 my-10 flex flex-col  px-2 sm:px-2">
+      <div className="mx-2 mb-4 grid grid-cols-2 items-stretch gap-3 gap-y-1 border-y-2 border-slate-300 px-2 text-xs sm:text-sm md:grid-cols-3 lg:grid-cols-6">
         <div>
           <span className="font-semibold">Ano: </span>
           <Link className="text-xs text-blue-700 sm:text-sm" href={`/year/${question.codeQuestion}`}>
