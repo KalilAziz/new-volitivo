@@ -1,19 +1,27 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
-import { Text } from '@/components/ui/text'
 
 import { navigationMaster } from '@/config/navigation-master'
 import { cn } from '@/lib/utils'
+import { UserButton } from '@clerk/nextjs'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { SectionContent } from '../section-content'
 
-export const Header = () => {
+type HeaderProps = {
+  user: {
+    userName?: string | null
+    image?: string | null
+  }
+}
+
+export const Header = ({ user }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const segment = useSelectedLayoutSegment()
 
@@ -50,17 +58,23 @@ export const Header = () => {
             })}
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-6">
-            <Link href="/user/login">
-              <Button
-                variant={'ghost'}
-                className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900"
-              >
-                Login
-              </Button>
-            </Link>
-            <Link href="/user/register">
-              <Button>Cadastre-se</Button>
-            </Link>
+            {user.userName ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <>
+                <Link href="/sign-in">
+                  <Button
+                    variant={'ghost'}
+                    className="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link href="/sign-up">
+                  <Button>Cadastre-se</Button>
+                </Link>
+              </>
+            )}
           </div>
           <div className="flex lg:hidden">
             <Button
@@ -84,9 +98,11 @@ export const Header = () => {
               <img className="h-12 w-auto" src="/logo.png" alt="Logo" />
               <span className="text-lg font-medium">Volitivo</span>
             </Link>
-            <Link href="/user/register">
-              <Button className="ml-4">Cadrastre-se</Button>
-            </Link>
+            {!user.userName && (
+              <Link href="/sign-up">
+                <Button className="ml-4">Cadrastre-se</Button>
+              </Link>
+            )}
 
             <Button
               variant={'link'}
@@ -120,12 +136,21 @@ export const Header = () => {
                 })}
               </div>
               <div className="py-6">
-                <Link
-                  href="/user/login"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Login
-                </Link>
+                {user.userName ? (
+                  <Link
+                    href="/dashboard"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    href="/sign-in"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Login
+                  </Link>
+                )}
               </div>
             </div>
           </div>

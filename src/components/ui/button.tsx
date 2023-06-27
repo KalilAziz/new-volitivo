@@ -18,13 +18,13 @@ const buttonVariants = cva(
         alternative: 'bg-white text-slate-300 font-semibold border-slate-300 hover:bg-sky-300',
         test: 'transition-colors ease-in-out translate-y-300 border-blue-700 text-blue-700 shadow-inner-[0_0_0_0_rgb(52,152,219)] hover:shadow-[0_0_10px_0_rgb(52,152,219)] bg-white hover:text-white hover:bg-sky-500 hover:border-sky-500',
         editorActive: 'is-active m-2 inline-flex items-center justify-center bg-blue-100',
-        editorDisable: 'm-2 inline-flex items-center justify-center text-lg font-medium hover:bg-white',
+        editorDisable: 'm-2 inline-flex items-center justify-center text-lg font-medium hover:bg-white'
       },
       size: {
         default: 'h-10 py-2 px-4',
         sm: 'h-9 px-3 rounded-md',
         lg: 'h-11 px-8 rounded-md',
-        editor: 'h-8 w-8 rounded-md',
+        editor: 'h-8 w-8 rounded-md'
       }
     },
     defaultVariants: {

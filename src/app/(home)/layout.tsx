@@ -1,7 +1,8 @@
 import { Footer } from '@/components/interface/footer'
 import { Header } from '@/components/interface/header'
 import { Toaster } from '@/components/ui/toaster'
-import { ClerkProvider } from '@clerk/nextjs'
+
+import { currentUser } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'Volitivo',
@@ -10,10 +11,17 @@ export const metadata = {
 
 type RootLayoutProps = { children: React.ReactNode }
 
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = async ({ children }: RootLayoutProps) => {
+  const user = await currentUser()
+
+  const infoUser = {
+    userName: user?.username,
+    image: user?.imageUrl
+  }
+
   return (
     <>
-      <Header />
+      <Header user={infoUser} />
       <main>{children}</main>
       <Toaster />
       <Footer />

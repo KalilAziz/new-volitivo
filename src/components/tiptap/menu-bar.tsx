@@ -54,7 +54,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           </SelectGroup>
         </SelectContent>
       </Select>
-           <Separator orientation='vertical'/>
+      <Separator orientation="vertical" />
       <div className="justify-betwee flex items-center gap-2">
         <Button
           onClick={() => editor.chain().focus().setParagraph().run()}
@@ -73,7 +73,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
         <Button
           onClick={() => editor.chain().focus().toggleItalic().run()}
           variant={editor.isActive('italic') ? 'editorActive' : 'editorDisable'}
-          size={'editor'}   
+          size={'editor'}
         >
           <BsTypeItalic />
         </Button>
@@ -92,7 +92,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           <FaHighlighter />
         </Button>
       </div>
-          <Separator orientation="vertical"/>
+      <Separator orientation="vertical" />
       <Select
         value={editor.getAttributes('textAlign') ? String(editor.getAttributes('textAlign').level) : undefined}
         onValueChange={(value: 'left' | 'center' | 'right' | 'justify') =>
@@ -105,78 +105,63 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
         <SelectContent>
           <SelectGroup>
             <SelectItem value="left">
-                <BiAlignLeft className="h-4 w-4" />   
+              <BiAlignLeft className="h-4 w-4" />
             </SelectItem>
             <SelectItem value="center">
-                <BiAlignMiddle/>
+              <BiAlignMiddle />
             </SelectItem>
             <SelectItem value="right">
-                <BiAlignRight/>
+              <BiAlignRight />
             </SelectItem>
             <SelectItem value="justify">
-                <BiAlignJustify/>
+              <BiAlignJustify />
             </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
-      <div className='justify-betwee flex items-center gap-2'>
-      <Button 
-        onClick={addImage}
-        variant={'editorDisable'}
-        size={'editor'}
-      >
-        <BsFillImageFill />
-      </Button>
-      <Button
-        onClick={() => editor.chain().focus().toggleBulletList().run()}
-        variant={editor.isActive('bulletList') ? 'editorActive' : 'editorDisable'}
-        size={'editor'}
-      >
-        <AiOutlineUnorderedList />
-      </Button>
-      <Button
-        onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        variant={editor.isActive('orderedList') ? 'editorActive' : 'editorDisable'}
-        size={'editor'}
-      >
-        <AiOutlineOrderedList />
-      </Button>
-      <Button
-        onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        variant={editor.isActive('blockquote') ? 'editorActive' : 'editorDisable'}
-        size={'editor'}
-      >
-        <GrBlockQuote />
-      </Button>
-      <Button onClick={() => editor.chain().focus().setHorizontalRule().run()}
-      variant={'editorDisable'}
-      size={'editor'}
-      >
-        <MdHorizontalRule />
-      </Button>
-      <Button 
-        onClick={() => editor.chain().focus().setHardBreak().run()}
-        variant={'editorDisable'}
-        size={'editor'}
+      <div className="justify-betwee flex items-center gap-2">
+        <Button onClick={addImage} variant={'editorDisable'} size={'editor'}>
+          <BsFillImageFill />
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          variant={editor.isActive('bulletList') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
         >
-        <ImPagebreak />
-      </Button>
+          <AiOutlineUnorderedList />
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+          variant={editor.isActive('orderedList') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
+        >
+          <AiOutlineOrderedList />
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+          variant={editor.isActive('blockquote') ? 'editorActive' : 'editorDisable'}
+          size={'editor'}
+        >
+          <GrBlockQuote />
+        </Button>
+        <Button
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
+          variant={'editorDisable'}
+          size={'editor'}
+        >
+          <MdHorizontalRule />
+        </Button>
+        <Button onClick={() => editor.chain().focus().setHardBreak().run()} variant={'editorDisable'} size={'editor'}>
+          <ImPagebreak />
+        </Button>
       </div>
-      <div className='justify-betwee flex items-center gap-2'>
-      <Button 
-        onClick={() => editor.chain().focus().undo().run()}
-        variant={'editorDisable'}
-        size={'editor'}
-      >
-        <BiUndo />
-      </Button>
-      <Button 
-        onClick={() => editor.chain().focus().redo().run()}
-        variant={'editorDisable'}
-        size={'editor'}
-      >
-        <BiRedo />
-      </Button>
+      <div className="justify-betwee flex items-center gap-2">
+        <Button onClick={() => editor.chain().focus().undo().run()} variant={'editorDisable'} size={'editor'}>
+          <BiUndo />
+        </Button>
+        <Button onClick={() => editor.chain().focus().redo().run()} variant={'editorDisable'} size={'editor'}>
+          <BiRedo />
+        </Button>
       </div>
     </div>
   )
