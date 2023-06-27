@@ -1,6 +1,7 @@
 import { Footer } from '@/components/interface/footer'
 import { Header } from '@/components/interface/header'
 import { Toaster } from '@/components/ui/toaster'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'Volitivo',

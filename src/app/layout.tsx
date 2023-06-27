@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
 import { cn } from '@/lib/utils'
 
@@ -14,9 +15,11 @@ type RootLayoutProps = { children: React.ReactNode }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
+    <ClerkProvider>
     <html lang="pt-BR" className="h-full">
       <body className={cn('h-full', inter.className)}>{children}</body>
     </html>
+    </ClerkProvider>
   )
 }
 
