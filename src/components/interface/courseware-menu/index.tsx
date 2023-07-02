@@ -20,7 +20,7 @@ export const ScrollAreaMobile = () => {
   const segment = useSelectedLayoutSegment()
 
   return(
-    <header className="lg:hidden bg-slate-100 rounded-lg fixed left-0 right-0">
+    <header className="lg:hidden bg-slate-100 rounded-lg">
     <SectionContent>
       <nav>
       <div className="flex lg:hidden">
