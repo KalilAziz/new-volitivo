@@ -5,7 +5,7 @@ import { useSelectedLayoutSegments } from 'next/navigation'
 const options = {
   dashboard: 'Dashboard',
   history: 'Histórico',
-  calendar: 'Calendário',
+  calendar: 'Concursos',
   contact: 'Contato'
 }
 

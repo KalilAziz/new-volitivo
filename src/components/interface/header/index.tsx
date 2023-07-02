@@ -59,8 +59,12 @@ export const Header = ({ user }: HeaderProps) => {
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-6">
             {user.userName ? (
-              
-              <UserButton afterSignOutUrl="/" />
+              <>
+                <Link href="/dashboard">
+                  <Button variant={'link'}>Painel</Button>
+                </Link>
+                <UserButton afterSignOutUrl="/" />
+              </>
             ) : (
               <>
                 <Link href="/sign-in">
@@ -142,7 +146,7 @@ export const Header = ({ user }: HeaderProps) => {
                     href="/dashboard"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Dashboard
+                    Painel
                   </Link>
                 ) : (
                   <Link

@@ -20,9 +20,8 @@ export const Discipline = (discipline: DisciplineProps) => {
           <div className="flex flex-col gap-2">
             {discipline.subjects.map((subject) => (
               <div key={subject.id}>
-                <span className="font-seminold">Assunto: </span>
                 <Link
-                  className="text-base text-gray-600 hover:text-sky-500"
+                  className="ml-4 border-l pl-4 text-base text-gray-600 hover:border-sky-500 hover:text-sky-500"
                   href={`/discipline/${discipline.slug}/subjects/${subject.slug}`}
                 >
                   {subject.name}

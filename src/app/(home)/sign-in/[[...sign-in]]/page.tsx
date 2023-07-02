@@ -7,8 +7,8 @@ const srcImage1 =
 
 export default function Page() {
   return (
-    <div className="mx-auto my-auto flex justify-center min-h-full max-w-7xl items-center py-12">
-        <SignIn afterSignInUrl="/" />
+    <div className="mx-auto my-auto flex min-h-full max-w-7xl items-center justify-center py-12">
+      <SignIn afterSignInUrl="/" />
     </div>
   )
 }

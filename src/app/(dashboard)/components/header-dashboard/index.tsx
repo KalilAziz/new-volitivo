@@ -41,20 +41,22 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
               <div className="flex h-16 justify-between">
                 <div className="flex">
                   <div className="flex flex-shrink-0 items-center">
-                    <Image
-                      width={40}
-                      height={40}
-                      className="block h-8 w-auto lg:hidden"
-                      src="/logo.png"
-                      alt="Your Company"
-                    />
-                    <Image
-                      width={40}
-                      height={40}
-                      className="hidden h-8 w-auto lg:block"
-                      src="/logo.png"
-                      alt="Your Company"
-                    />
+                    <Link href="/">
+                      <Image
+                        width={40}
+                        height={40}
+                        className="block h-8 w-auto lg:hidden"
+                        src="/logo.png"
+                        alt="Your Company"
+                      />
+                      <Image
+                        width={40}
+                        height={40}
+                        className="hidden h-8 w-auto lg:block"
+                        src="/logo.png"
+                        alt="Your Company"
+                      />
+                    </Link>
                   </div>
                   <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     {navigationDashboard.map((item) => (
@@ -63,7 +65,7 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
                         href={`/dashboard/${item.href}`}
                         className={cn(
                           isCurrent(item.href)
-                            ? 'border-indigo-500 text-gray-900'
+                            ? 'border-blue-700 text-gray-900'
                             : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
                           'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium'
                         )}

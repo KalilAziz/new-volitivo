@@ -3,9 +3,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { CreateNewCalendar } from './components/create-new-calendar'
+import { CreateNewCourseware } from './components/create-new-courseware'
 import { CreateNewPost } from './components/create-new-post'
 import { CreateNewQuestion } from './components/create-new-question'
 import { ListQuestionsAdmin } from './components/list-questions-admin'
+import { ListDisciplines } from '@/app/(home)/courseware/components'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import { ChevronRight } from 'lucide-react'
@@ -23,11 +25,13 @@ const AdminDashboard = () => {
         <TabsList>
           <TabsTrigger value="questions">Questões</TabsTrigger>
           <TabsTrigger value="blog">Blogs</TabsTrigger>
-          <TabsTrigger value="calendar">Calendar</TabsTrigger>
+          <TabsTrigger value="concursos">Concursos</TabsTrigger>
+          <TabsTrigger value="courseware">Materiais</TabsTrigger>
         </TabsList>
         {activeTab === 'questions' && <CreateNewQuestion />}
         {activeTab === 'blog' && <CreateNewPost />}
-        {activeTab === 'calendar' && <CreateNewCalendar />}
+        {activeTab === 'concursos' && <CreateNewCalendar />}
+        {activeTab === 'courseware' && <CreateNewCourseware />}
       </div>
       <TabsContent value="questions">
         <ListQuestionsAdmin />
@@ -55,7 +59,7 @@ const AdminDashboard = () => {
           </Link>
         </div>
       </TabsContent>
-      <TabsContent value="calendar">
+      <TabsContent value="concursos">
         <div
           className="rounded-lg border bg-white p-4 dark:bg-gray-800 md:p-8"
           id="about"
@@ -80,6 +84,7 @@ const AdminDashboard = () => {
           </Link>
         </div>
       </TabsContent>
+      <TabsContent value="courseware"></TabsContent>
     </Tabs>
   )
 }
