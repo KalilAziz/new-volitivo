@@ -59,6 +59,7 @@ export const Header = ({ user }: HeaderProps) => {
           </div>
           <div className="flex flex-1 items-center justify-end gap-x-6">
             {user.userName ? (
+              
               <UserButton afterSignOutUrl="/" />
             ) : (
               <>

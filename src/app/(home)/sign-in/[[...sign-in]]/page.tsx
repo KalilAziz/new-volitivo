@@ -7,11 +7,8 @@ const srcImage1 =
 
 export default function Page() {
   return (
-    <div className="grid justify-center justify-items-center lg:grid-cols-2">
-      <div>
+    <div className="mx-auto my-auto flex justify-center min-h-full max-w-7xl items-center py-12">
         <SignIn afterSignInUrl="/" />
-      </div>
-      <PageImage src={srcImage1} />
     </div>
   )
 }
