@@ -71,7 +71,7 @@ const social = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="border border-t bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <Navigate />
         <div className="mt-10 flex justify-center space-x-10">

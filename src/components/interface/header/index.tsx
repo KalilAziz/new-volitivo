@@ -28,7 +28,7 @@ export const Header = ({ user }: HeaderProps) => {
   return (
     <header className=" bg-white">
       <SectionContent>
-        <nav className=" flex items-center justify-between gap-x-6 " aria-label="Global">
+        <nav className="flex items-center justify-between gap-x-6 " aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Volitivo</span>
@@ -57,7 +57,7 @@ export const Header = ({ user }: HeaderProps) => {
               )
             })}
           </div>
-          <div className="flex flex-1 items-center justify-end gap-x-6">
+          <div className="flex flex-1 items-center justify-end sm:gap-x-6">
             {user.userName ? (
               <>
                 <Link href="/dashboard">
@@ -96,7 +96,7 @@ export const Header = ({ user }: HeaderProps) => {
 
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-3 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-3 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between gap-x-6">
             <Link href="/" className="-m-1.5 flex items-center p-1.5">
               <span className="sr-only">Volitivo</span>
@@ -104,8 +104,10 @@ export const Header = ({ user }: HeaderProps) => {
               <span className="text-lg font-medium">Volitivo</span>
             </Link>
             {!user.userName && (
-              <Link href="/sign-up">
-                <Button className="ml-4">Cadrastre-se</Button>
+              <Link href="/sign-up" className="-mr-5">
+                <Button onClick={() => setMobileMenuOpen(false)} className="w-32">
+                  Cadrastre-se
+                </Button>
               </Link>
             )}
 
@@ -128,6 +130,7 @@ export const Header = ({ user }: HeaderProps) => {
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className={cn(
                         '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50',
                         current
@@ -144,6 +147,7 @@ export const Header = ({ user }: HeaderProps) => {
                 {user.userName ? (
                   <Link
                     href="/dashboard"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Painel
@@ -151,6 +155,7 @@ export const Header = ({ user }: HeaderProps) => {
                 ) : (
                   <Link
                     href="/sign-in"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Login

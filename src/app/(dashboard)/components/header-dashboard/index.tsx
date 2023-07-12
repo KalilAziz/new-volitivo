@@ -5,6 +5,7 @@ import { useSelectedLayoutSegments } from 'next/navigation'
 
 import { navigationDashboard } from '@/config/navigation-dashboard'
 import { cn } from '@/lib/utils'
+import { UserButton } from '@clerk/nextjs'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -12,16 +13,10 @@ import { SubHeader } from './sub-header'
 import { UserAvatar, userNavigation } from './user-avatar'
 
 type HeaderDashboardProps = {
-  user: {
-    name: string
-    email: string
-    imageUrl: string
-  }
-
   children: React.ReactNode
 }
 
-export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
+export const HeaderDashboard = ({ children }: HeaderDashboardProps) => {
   const segment = useSelectedLayoutSegments()
 
   const segmentUser = segment[segment.length - 1]
@@ -45,20 +40,20 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
                       <Image
                         width={40}
                         height={40}
-                        className="block h-8 w-auto lg:hidden"
+                        className="block h-10 w-auto lg:hidden"
                         src="/logo.png"
                         alt="Your Company"
                       />
                       <Image
                         width={40}
                         height={40}
-                        className="hidden h-8 w-auto lg:block"
+                        className="hidden h-10 w-auto lg:block"
                         src="/logo.png"
                         alt="Your Company"
                       />
                     </Link>
                   </div>
-                  <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                  <div className="hidden sm:-my-px sm:ml-8 sm:flex sm:space-x-8">
                     {navigationDashboard.map((item) => (
                       <Link
                         key={item.name}
@@ -76,10 +71,14 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
                     ))}
                   </div>
                 </div>
-                <UserAvatar {...user} />
-                <div className="-mr-2 flex items-center sm:hidden">
+                <UserAvatar />
+
+                <div className="-mr-2 flex items-center gap-x-4 sm:hidden">
+                  <div>
+                    <UserButton />
+                  </div>
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -100,7 +99,7 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
                     href={`/dashboard/${item.href}`}
                     className={cn(
                       isCurrent(item.href)
-                        ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                        ? 'border-blue-500 bg-indigo-50 text-blue-700'
                         : 'border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800',
                       'block border-l-4 py-2 pl-3 pr-4 text-base font-medium'
                     )}
@@ -112,32 +111,14 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
               </div>
               <div className="border-t border-gray-200 pb-3 pt-4">
                 <div className="flex items-center px-4">
-                  <div className="flex-shrink-0">
-                    <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
-                  </div>
-                  <div className="ml-3">
-                    <div className="text-base font-medium text-gray-800">{user.name}</div>
-                    <div className="text-sm font-medium text-gray-500">{user.email}</div>
-                  </div>
+                  <UserButton />
                   <button
                     type="button"
-                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
-                </div>
-                <div className="mt-3 space-y-1">
-                  {userNavigation.map((item) => (
-                    <Disclosure.Button
-                      key={item.name}
-                      as="a"
-                      href={item.href}
-                      className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                    >
-                      {item.name}
-                    </Disclosure.Button>
-                  ))}
                 </div>
               </div>
             </Disclosure.Panel>
@@ -153,4 +134,28 @@ export const HeaderDashboard = ({ user, children }: HeaderDashboardProps) => {
       </div>
     </div>
   )
+}
+
+{
+  /*
+  <div className="flex-shrink-0">
+    <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+  </div>
+  <div className="ml-3">
+    <div className="text-base font-medium text-gray-800">{user.name}</div>
+    <div className="text-sm font-medium text-gray-500">{user.email}</div>
+  </div>
+  <div className="mt-3 space-y-1">
+      {userNavigation.map((item) => (
+        <Disclosure.Button
+          key={item.name}
+          as="a"
+          href={item.href}
+          className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+        >
+          {item.name}
+        </Disclosure.Button>
+      ))}
+    </div>
+*/
 }
