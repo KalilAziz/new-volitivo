@@ -20,7 +20,7 @@ const user = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <>
-      <HeaderDashboard user={user}>{children}</HeaderDashboard>
+      <HeaderDashboard>{children}</HeaderDashboard>
       <Toaster />
     </>
   )
