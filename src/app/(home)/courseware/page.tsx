@@ -7,24 +7,29 @@ import PagePost from '../blog/[postId]/page'
 
 const PageCourseware = () => {
   return (
-    <SectionContent>
-      <div className="md:grd-cols-[220px_minmax(0,1fr)] lg:gid-cols-[240px_minmax(0,1fr)] relative flex-1 items-start md:grid md:gap-6 lg:gap-10">
-        <div className="hidden lg:fixed lg:flex">
-          <ScrollArea className="h-screen w-60 rounded-md border-y pb-20 ">
-            <ListDisciplines />
-          </ScrollArea>
-        </div>
+    <SectionContent className="flex w-full items-start gap-x-8 py-10">
+      <ScrollAreaMobile />
+      <aside className="sticky top-8 hidden w-60 shrink-0 lg:block">
+        <ScrollArea className="h-screen pr-4">
+          <ListDisciplines />
+        </ScrollArea>
+      </aside>
 
-        <ScrollAreaMobile />
-
-        <div className="lg:pl-60">
-          <PagePost
-            params={{
-              postId: ''
-            }}
-          />
-        </div>
+      <div className="flex-1">
+        <PagePost
+          params={{
+            postId: ''
+          }}
+        />
       </div>
+
+      {/* <div className="md:grd-cols-[220px_minmax(0,1fr)] lg:gid-cols-[240px_minmax(0,1fr)] relative flex-1 items-start md:grid md:gap-6 lg:gap-10">
+        <div className="absolute inset-y-0 left-0 hidden lg:flex"></div>
+
+       
+
+        <div className="lg:pl-60"></div>
+      </div> */}
     </SectionContent>
   )
 }

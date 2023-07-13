@@ -1,7 +1,7 @@
 import { Forms } from '@/app/(home)/contact/components/forms'
 import { Text } from '@/components/ui/text'
 
-const userExamsPage = () => {
+const ReportPage = () => {
   return (
     <>
       <div className="mx-auto max-w-2xl text-center">
@@ -14,4 +14,4 @@ const userExamsPage = () => {
   )
 }
 
-export default userExamsPage
+export default ReportPage

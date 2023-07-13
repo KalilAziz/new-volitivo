@@ -6,7 +6,6 @@ import { CreateNewCourseware } from './components/create-new-courseware'
 import { CreateNewPost } from './components/create-new-post'
 import { CreateNewQuestion } from './components/create-new-question'
 import { ListQuestionsAdmin } from './components/list-questions-admin'
-import { ListDisciplines } from '@/app/(home)/courseware/components'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import { ChevronRight } from 'lucide-react'

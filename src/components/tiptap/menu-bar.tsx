@@ -1,11 +1,14 @@
+'use client'
+
 import { AiOutlineOrderedList, AiOutlineUnorderedList } from 'react-icons/ai'
-import { BiAlignJustify, BiAlignLeft, BiAlignMiddle, BiAlignRight, BiRedo, BiUndo } from 'react-icons/bi'
+import { BiAlignLeft, BiAlignMiddle, BiAlignRight, BiRedo, BiUndo } from 'react-icons/bi'
 import { BsFillImageFill, BsParagraph, BsTypeBold, BsTypeItalic, BsTypeStrikethrough } from 'react-icons/bs'
 import { FaHighlighter } from 'react-icons/fa'
 import { GrBlockQuote } from 'react-icons/gr'
 import { ImPagebreak } from 'react-icons/im'
 import { MdHorizontalRule } from 'react-icons/md'
 
+import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { Editor } from '@tiptap/react'
 
 import { Button } from '../ui/button'
@@ -30,8 +33,16 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
     }
   }
 
+  const ActiveTextAlign = editor.isActive({ textAlign: 'left' })
+    ? 'left'
+    : editor.isActive({ textAlign: 'center' })
+    ? 'center'
+    : editor.isActive({ textAlign: 'right' })
+    ? 'right'
+    : 'left'
+
   return (
-    <div className="flex items-center justify-between gap-8 rounded-lg bg-gray-100 px-4 py-3">
+    <div className="flex items-center justify-between gap-3 overflow-x-auto rounded-lg bg-gray-100 px-4 py-3">
       <Select
         value={editor.getAttributes('heading').level ? String(editor.getAttributes('heading').level) : 'void'}
         onValueChange={(value: '1' | '2' | '3') =>
@@ -42,7 +53,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
             .run()
         }
       >
-        <SelectTrigger className="max-w-[250px] bg-white">
+        <SelectTrigger className="min-w-[200px] max-w-[240px] bg-white">
           <SelectValue placeholder="Selecione um título" />
         </SelectTrigger>
         <SelectContent>
@@ -54,7 +65,9 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           </SelectGroup>
         </SelectContent>
       </Select>
+
       <Separator orientation="vertical" />
+
       <div className="justify-betwee flex items-center gap-2">
         <Button
           onClick={() => editor.chain().focus().setParagraph().run()}
@@ -92,33 +105,42 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           <FaHighlighter />
         </Button>
       </div>
+
       <Separator orientation="vertical" />
-      <Select
-        value={editor.getAttributes('textAlign') ? String(editor.getAttributes('textAlign').level) : undefined}
+
+      <ToggleGroup.Root
+        className="inline-flex space-x-px rounded "
+        type="single"
+        defaultValue="left"
+        value={ActiveTextAlign}
         onValueChange={(value: 'left' | 'center' | 'right' | 'justify') =>
           editor.chain().focus().setTextAlign(value).run()
         }
+        aria-label="Text alignment"
       >
-        <SelectTrigger className="max-w-[80px] bg-white">
-          <SelectValue placeholder="Alinhamento" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectItem value="left">
-              <BiAlignLeft className="h-4 w-4" />
-            </SelectItem>
-            <SelectItem value="center">
-              <BiAlignMiddle />
-            </SelectItem>
-            <SelectItem value="right">
-              <BiAlignRight />
-            </SelectItem>
-            <SelectItem value="justify">
-              <BiAlignJustify />
-            </SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+        <ToggleGroup.Item
+          className="data-[state=on]:text-violet12 rounded-md p-2 text-lg data-[state=on]:bg-blue-100"
+          value="left"
+          aria-label="Left aligned"
+        >
+          <BiAlignLeft />
+        </ToggleGroup.Item>
+        <ToggleGroup.Item
+          className="data-[state=on]:text-violet12 rounded-md p-2 text-lg data-[state=on]:bg-blue-100"
+          value="center"
+          aria-label="Center aligned"
+        >
+          <BiAlignMiddle />
+        </ToggleGroup.Item>
+        <ToggleGroup.Item
+          className="data-[state=on]:text-violet12 rounded-md p-2 text-lg data-[state=on]:bg-blue-100"
+          value="right"
+          aria-label="Right aligned"
+        >
+          <BiAlignRight />
+        </ToggleGroup.Item>
+      </ToggleGroup.Root>
+
       <div className="justify-betwee flex items-center gap-2">
         <Button onClick={addImage} variant={'editorDisable'} size={'editor'}>
           <BsFillImageFill />
@@ -155,6 +177,7 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
           <ImPagebreak />
         </Button>
       </div>
+
       <div className="justify-betwee flex items-center gap-2">
         <Button onClick={() => editor.chain().focus().undo().run()} variant={'editorDisable'} size={'editor'}>
           <BiUndo />

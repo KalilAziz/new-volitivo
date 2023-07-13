@@ -10,7 +10,7 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { SubHeader } from './sub-header'
-import { UserAvatar, userNavigation } from './user-avatar'
+import { UserAvatar } from './user-avatar'
 
 type HeaderDashboardProps = {
   children: React.ReactNode

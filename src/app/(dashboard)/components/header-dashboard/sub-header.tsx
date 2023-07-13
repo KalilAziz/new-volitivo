@@ -6,7 +6,8 @@ const options = {
   dashboard: 'Dashboard',
   history: 'Histórico',
   calendar: 'Concursos',
-  contact: 'Contato'
+  report: 'Reportar',
+  admin: 'Administração'
 }
 
 export const SubHeader = () => {

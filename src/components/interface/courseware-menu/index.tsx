@@ -1,14 +1,11 @@
 'use client'
 
-import Link from 'next/link'
-import { useSelectedLayoutSegment } from 'next/navigation'
 import { useState } from 'react'
 
 import { ListDisciplines } from '@/app/(home)/courseware/components'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
-import { cn } from '@/lib/utils'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -16,10 +13,9 @@ import { SectionContent } from '../section-content'
 
 export const ScrollAreaMobile = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const segment = useSelectedLayoutSegment()
 
   return (
-    <header className="rounded-lg bg-slate-100 lg:hidden">
+    <header className="absolute left-4 rounded-lg bg-slate-100 lg:hidden">
       <SectionContent>
         <nav>
           <div className="flex lg:hidden">
