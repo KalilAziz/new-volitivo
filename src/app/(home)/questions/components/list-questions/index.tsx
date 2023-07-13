@@ -28,7 +28,7 @@ export const ListQuestions = () => {
         <AccordionItem value="filter">
           <AccordionTrigger
             message="Selecione um filtro"
-            className="w-full justify-between p-3 sm:justify-between sm:gap-y-3 sm:p-1"
+            className="w-full  flex-col justify-between gap-2 p-3 sm:flex-row sm:justify-between sm:gap-y-3 sm:p-1"
           >
             <h1 className="my-4 from-slate-600 text-xl font-semibold sm:my-0 sm:text-2xl">Provas de Concurso</h1>
           </AccordionTrigger>

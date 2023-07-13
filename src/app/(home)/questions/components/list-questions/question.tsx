@@ -188,17 +188,21 @@ export const Question = (question: QuestionProps) => {
         </div>
       </div>
 
-      <Button
-        onClick={handleSendAnswerUser}
-        disabled={disabledButton}
-        className={cn(
-          'ml-auto h-10 w-full cursor-default sm:w-auto',
-          disabledButton ? 'cursor-not-allowed' : 'cursor-pointer'
-        )}
-      >
-        Responder Questão
-        {loading && <div className="ml-2 h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-blue-500" />}
-      </Button>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <Button className="w-full  sm:w-auto">Ajuda</Button>
+
+        <Button
+          onClick={handleSendAnswerUser}
+          disabled={disabledButton}
+          className={cn(
+            'ml-auto h-10 w-full cursor-default sm:w-auto',
+            disabledButton ? 'cursor-not-allowed' : 'cursor-pointer'
+          )}
+        >
+          Responder Questão
+          {loading && <div className="ml-2 h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-blue-500" />}
+        </Button>
+      </div>
     </div>
   )
 }
