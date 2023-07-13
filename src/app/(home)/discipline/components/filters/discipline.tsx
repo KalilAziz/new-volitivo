@@ -7,7 +7,7 @@ type IssuingFilterProps = {
 
 export const IssuingFilter = ({ issuing, setIssuing }: IssuingFilterProps) => {
   return (
-    <div className="flex gap-3 text-sm">
+    <div className="flex flex-col gap-3 text-sm sm:flex-row">
       <input
         type="text"
         placeholder="Digite o nome da disciplina"
